@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>first_article</title>
-    <url>/2020/10/11/hua-qing-b365m-itx-hei-ping-guo-efi/</url>
+    <title>华擎B365m-itx黑苹果EFI</title>
+    <url>/2020/11/11/hua-qing-b365m-itx-hei-ping-guo-efi/</url>
     <content><![CDATA[<h1 id="电脑配置清单"><a href="#电脑配置清单" class="headerlink" title="电脑配置清单"></a>电脑配置清单</h1><ul>
 <li>主板： 华擎b365m-itx/ac</li>
 <li>CPU:    i5 9400</li>
@@ -34,9 +34,6 @@
 </ul>
 <p><img src="https://gitee.com/kexiquan/picture/raw/master/uPic/image-20201110230539942.png" alt="image-20201110230539942"></p>
 ]]></content>
-      <categories>
-        <category>黑苹果</category>
-      </categories>
       <tags>
         <tag>OpenCore</tag>
       </tags>
