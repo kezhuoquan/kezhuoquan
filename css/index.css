@@ -1527,6 +1527,9 @@ img:not([src]) {
   display: block !important;
   height: auto !important;
 }
+.vpower.txt-right {
+  display: none;
+}
 figure.highlight table::-webkit-scrollbar-thumb {
   background: #dce4eb;
 }
