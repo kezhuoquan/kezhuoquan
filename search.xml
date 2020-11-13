@@ -27,7 +27,7 @@
 <ul>
 <li>更新到最新的系统</li>
 <li>修改了关闭SIP的选项 </li>
-<li>修改了引导参数 boot-args：keepsyms=1 debug=0x100 cardtype=ecardonly,csr-active-config:67000000改为了00000000来关闭SIP</li>
+<li>修改了引导参数 boot-args：keepsyms=1 debug=0x100 cardtype=ecardonly,csr-active-config:67000000改为了00000000来开启SIP</li>
 <li>添加了4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102:rtc-blacklist</li>
 </ul>
 <p><img src="https://gitee.com/kexiquan/picture/raw/master/uPic/image-20201113124855389.png" alt="image-20201113124855389"></p>
