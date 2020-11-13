@@ -17,11 +17,25 @@
 <li><p>OpenCore 0.6.3</p>
 </li>
 </ul>
-<p><a href="https://github.com/KeXQ/-b365itx-i59400-efi.git">EFI</a></p>
 <h1 id="使用情况"><a href="#使用情况" class="headerlink" title="使用情况"></a>使用情况</h1><ul>
 <li>达到99%的完美度</li>
 <li>节能五项都能使用</li>
 <li>单系统MacOS</li>
+</ul>
+<h1 id="EFI文件"><a href="#EFI文件" class="headerlink" title="EFI文件"></a>EFI文件</h1><ul>
+<li><p>2020-11-13 Big Sur.    <a href="https://github.com/KeXQ/-b365itx-i59400-efi/files/5534881/EFI-2020-11-13.zip">EFI</a></p>
+<ul>
+<li>更新到最新的系统</li>
+<li>修改了关闭SIP的选项 </li>
+<li>修改了引导参数 boot-args：keepsyms=1 debug=0x100 cardtype=ecardonly,csr-active-config:67000000改为了00000000来关闭SIP</li>
+<li>添加了4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102:rtc-blacklist</li>
+</ul>
+<p><img src="https://gitee.com/kexiquan/picture/raw/master/uPic/image-20201113124855389.png" alt="image-20201113124855389"></p>
+<p><img src="https://gitee.com/kexiquan/picture/raw/master/uPic/image-20201113125007837.png" alt="image-20201113125007837"></p>
+<p><img src="https://gitee.com/kexiquan/picture/raw/master/uPic/image-20201113133446806.png" alt="image-20201113133446806"></p>
+</li>
+<li><p>2020-11-01 Catalina 10.15.7 <a href="https://github.com/KeXQ/-b365itx-i59400-efi.git">EFI</a></p>
+</li>
 </ul>
 <h1 id="谢鸣"><a href="#谢鸣" class="headerlink" title="谢鸣"></a>谢鸣</h1><ul>
 <li>黑果小兵提供的<a href="https://blog.daliansky.net/macOS-Catalina-10.15.7-19H2-Release-version-with-Clover-5122-original-image-Double-EFI-Version-UEFI-and-MBR.html">镜像</a>以及<a href="https://blog.daliansky.net/OpenCore-BootLoader.html">精解OpenCore</a>的帮助</li>
