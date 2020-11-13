@@ -26,7 +26,7 @@
 <li><p>2020-11-13 Big Sur.    <a href="https://github.com/KeXQ/-b365itx-i59400-efi/files/5534881/EFI-2020-11-13.zip">EFI</a></p>
 <ul>
 <li>更新到最新的系统</li>
-<li>修改了关闭SIP的选项 </li>
+<li>修改了开启SIP的选项 </li>
 <li>修改了引导参数 boot-args：keepsyms=1 debug=0x100 cardtype=ecardonly,csr-active-config:67000000改为了00000000来开启SIP</li>
 <li>添加了4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102:rtc-blacklist</li>
 </ul>
