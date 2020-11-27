@@ -633,4 +633,247 @@
         <tag>持久化</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Redis Template的使用</title>
+    <url>/2020/11/27/redis/redis-template-de-shi-yong/</url>
+    <content><![CDATA[<h1 id="导入依赖pom"><a href="#导入依赖pom" class="headerlink" title="导入依赖pom"></a>导入依赖pom</h1><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">   &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">   &lt;artifactId&gt;spring-boot-starter-data-redis&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">   &lt;groupId&gt;org.apache.commons&lt;/groupId&gt;</span><br><span class="line">   &lt;artifactId&gt;commons-pool2&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></tbody></table></figure>
+
+<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">spring:</span><br><span class="line">  redis:</span><br><span class="line">    database: 0</span><br><span class="line">    timeout: 3000</span><br><span class="line">    # 哨兵模式</span><br><span class="line">    # sentinel: </span><br><span class="line">      #主服务器所在集群名称</span><br><span class="line">      # master: mymaster </span><br><span class="line">      # nodes: 172.16.233.130:26379,172.16.233.130:26380,172.16.233.130:26381</span><br><span class="line">   lettuce:</span><br><span class="line">      pool:</span><br><span class="line">        max-idle: 50</span><br><span class="line">        min-idle: 10</span><br><span class="line">        max-active: 100</span><br><span class="line">        max-wait: 1000</span><br></pre></td></tr></tbody></table></figure>
+
+<h1 id="测试代码"><a href="#测试代码" class="headerlink" title="测试代码"></a>测试代码</h1><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">@RestController</span><br><span class="line">public class IndexController {</span><br><span class="line"></span><br><span class="line">    private static final Logger logger = LoggerFactory.getLogger(IndexController.class);</span><br><span class="line"></span><br><span class="line">    @Autowired</span><br><span class="line">    private StringRedisTemplate stringRedisTemplate;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * @throws InterruptedException</span><br><span class="line">     */</span><br><span class="line">    @RequestMapping("/test_sentinel")</span><br><span class="line">    public void testSentinel() throws InterruptedException {</span><br><span class="line">        int i = 1;</span><br><span class="line">        while (true){</span><br><span class="line">             stringRedisTemplate.opsForValue().set("zhuge"+i, i+"");</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<h1 id="StringRedisTemplate与RedisTemplate详解"><a href="#StringRedisTemplate与RedisTemplate详解" class="headerlink" title="StringRedisTemplate与RedisTemplate详解"></a>StringRedisTemplate与RedisTemplate详解</h1><p>spring 封装了 RedisTemplate 对象来进行对redis的各种操作，它支持所有的 redis 原生的 api。在RedisTemplate中提供了几个常用的接口方法的使用，分别是:</p>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line">redisTemplate.opsForValue();<span class="comment">//操作字符串</span></span><br><span class="line">redisTemplate.opsForHash();<span class="comment">//操作hash</span></span><br><span class="line">redisTemplate.opsForList();<span class="comment">//操作list</span></span><br><span class="line">redisTemplate.opsForSet();<span class="comment">//操作set</span></span><br><span class="line">redisTemplate.opsForZSet();<span class="comment">//操作有序set          </span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>StringRedisTemplate继承自RedisTemplate，也一样拥有上面这些操作。</p>
+<p>StringRedisTemplate默认采用的是String的序列化策略，保存的key和value都是采用此策略序列化保存的。</p>
+<p>RedisTemplate默认采用的是JDK的序列化策略，保存的key和value都是采用此策略序列化保存的。</p>
+<h2 id="redis命令对应的RedisTemplate中的方法列表"><a href="#redis命令对应的RedisTemplate中的方法列表" class="headerlink" title="redis命令对应的RedisTemplate中的方法列表"></a>redis命令对应的RedisTemplate中的方法列表</h2><ul>
+<li>String</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>redisTemplate</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>set key value</td>
+<td>opsForValue().set(“key”,”value”)</td>
+</tr>
+<tr>
+<td>get key</td>
+<td>opsForValue().get(“key”)</td>
+</tr>
+<tr>
+<td>del key</td>
+<td>delete(“key”)</td>
+</tr>
+<tr>
+<td>strlen key</td>
+<td>opsForValue().size(“key”)</td>
+</tr>
+<tr>
+<td>getset key value</td>
+<td>opsForValue().size(“key”)</td>
+</tr>
+<tr>
+<td>getrange key start end</td>
+<td>opsForValue().size(“key”)</td>
+</tr>
+<tr>
+<td><strong>String类型结构</strong></td>
+<td>opsForValue().append(“key”,”value”)</td>
+</tr>
+</tbody></table>
+<ul>
+<li>hash</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>redistemplate</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>hmset key field1 value1 field2 value2…</td>
+<td>opsForHash().putAll(“key”,map) //map是一个集合对象</td>
+</tr>
+<tr>
+<td>hset key field value</td>
+<td>opsForHash().put(“key”,”field”,”value”)</td>
+</tr>
+<tr>
+<td>hexists key field</td>
+<td>opsForHash().hasKey(“key”,”field”)</td>
+</tr>
+<tr>
+<td>hgetall key</td>
+<td>opsForHash().entries(“key”) //返回Map对象</td>
+</tr>
+<tr>
+<td>hvals key</td>
+<td>opsForHash().values(“key”) //返回List对象</td>
+</tr>
+<tr>
+<td>hkeys key</td>
+<td>opsForHash().keys(“key”) //返回List对象</td>
+</tr>
+<tr>
+<td>hmget key field1 field2…</td>
+<td>opsForHash().multiGet(“key”,keyList)</td>
+</tr>
+<tr>
+<td>hsetnx key field value</td>
+<td>opsForHash().putIfAbsent(“key”,”field”,”value”</td>
+</tr>
+<tr>
+<td>hdel key field1 field2</td>
+<td>opsForHash().delete(“key”,”field1”,”field2”)</td>
+</tr>
+<tr>
+<td>hget key field</td>
+<td>opsForHash().get(“key”,”field”)</td>
+</tr>
+</tbody></table>
+<ul>
+<li>list</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>redistemplate</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>lpush list node1 node2 node3…</td>
+<td>opsForList().leftPush(“list”,”node”)</td>
+</tr>
+<tr>
+<td>lpush list node1 node2 node3…</td>
+<td>opsForList().leftPushAll(“list”,list) //list是集合对象</td>
+</tr>
+<tr>
+<td>rpush list node1 node2 node3…</td>
+<td>opsForList().rightPush(“list”,”node”)</td>
+</tr>
+<tr>
+<td>rpush list node1 node2 node3…</td>
+<td>opsForList().rightPushAll(“list”,list) //list是集合对象</td>
+</tr>
+<tr>
+<td>lindex key index</td>
+<td>opsForList().index(“list”, index)</td>
+</tr>
+<tr>
+<td>llen key</td>
+<td>opsForList().size(“key”)</td>
+</tr>
+<tr>
+<td>lpop key</td>
+<td>opsForList().leftPop(“key”)</td>
+</tr>
+<tr>
+<td>rpop key</td>
+<td>opsForList().rightPop(“key”)</td>
+</tr>
+<tr>
+<td>lpushx list node</td>
+<td>opsForList().leftPushIfPresent(“list”,”node”)</td>
+</tr>
+<tr>
+<td>rpushx list node</td>
+<td>opsForList().rightPushIfPresent(“list”,”node”)</td>
+</tr>
+<tr>
+<td>lrange list start end</td>
+<td>opsForList().range(“list”,start,end)</td>
+</tr>
+<tr>
+<td>lrem list count value</td>
+<td>opsForList().remove(“list”,count,”value”)</td>
+</tr>
+<tr>
+<td>lset key index value</td>
+<td>opsForList().set(“list”,index,”value”)</td>
+</tr>
+</tbody></table>
+<ul>
+<li>set</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>redis</th>
+<th>redisTemplate</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>sadd key member1 member2…</td>
+<td>boundSetOps(“key”).add(“member1”,”member2”,…)</td>
+</tr>
+<tr>
+<td>rt.opsForSet().add(“key”, set) //set是一个集合对象</td>
+<td></td>
+</tr>
+<tr>
+<td>scard key</td>
+<td>opsForSet().size(“key”)</td>
+</tr>
+<tr>
+<td>sidff key1 key2</td>
+<td>opsForSet().difference(“key1”,”key2”) //返回一个集合对象</td>
+</tr>
+<tr>
+<td>sinter key1 key2</td>
+<td>opsForSet().intersect(“key1”,”key2”)//同上</td>
+</tr>
+<tr>
+<td>sunion key1 key2</td>
+<td>opsForSet().union(“key1”,”key2”)//同上</td>
+</tr>
+<tr>
+<td>sdiffstore des key1 key2</td>
+<td>opsForSet().differenceAndStore(“key1”,”key2”,”des”)</td>
+</tr>
+<tr>
+<td>sinter des key1 key2</td>
+<td>opsForSet().intersectAndStore(“key1”,”key2”,”des”)</td>
+</tr>
+<tr>
+<td>sunionstore des key1 key2</td>
+<td>opsForSet().unionAndStore(“key1”,”key2”,”des”)</td>
+</tr>
+<tr>
+<td>sismember key member</td>
+<td>opsForSet().isMember(“key”,”member”)</td>
+</tr>
+<tr>
+<td>smembers key</td>
+<td>opsForSet().members(“key”)</td>
+</tr>
+<tr>
+<td>spop key</td>
+<td>opsForSet().pop(“key”)</td>
+</tr>
+<tr>
+<td>srandmember key count</td>
+<td>opsForSet().randomMember(“key”,count)</td>
+</tr>
+<tr>
+<td>srem key member1 member2…</td>
+<td>opsForSet().remove(“key”,”member1”,”member2”,…)</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>Redis</category>
+      </categories>
+      <tags>
+        <tag>SpringBoot</tag>
+      </tags>
+  </entry>
 </search>
