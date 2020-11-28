@@ -1,646 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>华擎B365m-itx黑苹果EFI</title>
-    <url>/2020/11/11/hua-qing-b365m-itx-hei-ping-guo-efi/</url>
-    <content><![CDATA[<h1 id="电脑配置清单"><a href="#电脑配置清单" class="headerlink" title="电脑配置清单"></a>电脑配置清单</h1><ul>
-<li>主板： 华擎b365m-itx/ac</li>
-<li>CPU:    i5 9400</li>
-<li>内存： 枭鲸16G 2666MHz * 2</li>
-<li>硬盘：海康威视C2000 Pro 1024G + SN750 512G + 1024机械硬盘（备份系统）</li>
-<li>网卡： BCM94360CS2（免驱）</li>
-<li>显卡： 平时只打代码，不打游戏，就没买独显了</li>
-</ul>
-<h1 id="引导文件EFI"><a href="#引导文件EFI" class="headerlink" title="引导文件EFI"></a>引导文件EFI</h1><ul>
-<li><p>系统：Catalina 10.15.7</p>
-</li>
-<li><p>OpenCore 0.6.3</p>
-</li>
-</ul>
-<h1 id="使用情况"><a href="#使用情况" class="headerlink" title="使用情况"></a>使用情况</h1><ul>
-<li>达到99%的完美度</li>
-<li>节能五项都能使用</li>
-<li>单系统MacOS</li>
-</ul>
-<h1 id="EFI文件"><a href="#EFI文件" class="headerlink" title="EFI文件"></a>EFI文件</h1><ul>
-<li><p>2020-11-13 Big Sur.    <a href="https://github.com/KeXQ/-b365itx-i59400-efi/files/5534881/EFI-2020-11-13.zip">EFI</a></p>
-<ul>
-<li>更新到最新的系统</li>
-<li>修改了开启SIP的选项 </li>
-<li>修改了引导参数 boot-args：keepsyms=1 debug=0x100 cardtype=ecardonly,csr-active-config:67000000改为了00000000来开启SIP,csr-active-config的值解释如下和原来的Catalina不一样了</li>
-</ul>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">00000000 -完全启用SIP（0x0）。</span><br><span class="line">03000000 -禁用kext签名（0x1）和文件系统保护（0x2）。</span><br><span class="line">FF030000 -禁用macOS High Sierra（0x3ff）中的所有标志。</span><br><span class="line">FF070000 -当Apple引入了可执行策略的值时，禁用macOS Mojave和macOS Catalina（0x7ff）中的所有标志。</span><br><span class="line">FF0F0000 -禁用macOS Big Sur（0xfff）中的所有标志，该标志具有用于身份验证的root的另一个新标志。</span><br></pre></td></tr></tbody></table></figure>
-
-
-
-</li>
-</ul>
-<ul>
-<li><p>添加了4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102:rtc-blacklist</p>
-<p><img src="https://gitee.com/kexiquan/picture/raw/master/uPic/image-20201113124855389.png" alt="image-20201113124855389"></p>
-<p><img src="https://gitee.com/kexiquan/picture/raw/master/uPic/image-20201113125007837.png" alt="image-20201113125007837"></p>
-<p><img src="https://gitee.com/kexiquan/picture/raw/master/uPic/image-20201113133446806.png" alt="image-20201113133446806"></p>
-</li>
-</ul>
-<ul>
-<li>2020-11-01 Catalina 10.15.7 <a href="https://github.com/KeXQ/-b365itx-i59400-efi.git">EFI</a></li>
-</ul>
-<h1 id="谢鸣"><a href="#谢鸣" class="headerlink" title="谢鸣"></a>谢鸣</h1><ul>
-<li>黑果小兵提供的<a href="https://blog.daliansky.net/macOS-Catalina-10.15.7-19H2-Release-version-with-Clover-5122-original-image-Double-EFI-Version-UEFI-and-MBR.html">镜像</a>以及<a href="https://blog.daliansky.net/OpenCore-BootLoader.html">精解OpenCore</a>的帮助</li>
-<li>远景论坛大佬们的指导</li>
-</ul>
-<h1 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h1><p><img src="https://gitee.com/kexiquan/picture/raw/master/uPic/image-20201110224153663.png" alt="image-20201110224153663"></p>
-<p><img src="https://gitee.com/kexiquan/picture/raw/master/uPic/image-20201110224319790.png" alt="image-20201110224319790"></p>
-<ul>
-<li>硬解没问题</li>
-</ul>
-<p><img src="https://gitee.com/kexiquan/picture/raw/master/uPic/image-20201110230539942.png" alt="image-20201110230539942"></p>
-]]></content>
-      <categories>
-        <category>黑苹果</category>
-      </categories>
-      <tags>
-        <tag>OpenCore</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>三个数之和</title>
-    <url>/2020/11/12/san-ge-shu-zhi-he/</url>
-    <content><![CDATA[<h1 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h1><p>给你一个包含 n 个整数的数组 nums，判断 nums 中是否存在三个元素 a，b，c ，使得 a + b + c = 0 ？请你找出所有满足条件且不重复的三元组。</p>
-<p>注意：答案中不可以包含重复的三元组。</p>
-<p>示例：</p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">给定数组 nums = [-1, 0, 1, 2, -1, -4]，</span><br><span class="line"></span><br><span class="line">满足要求的三元组集合为：</span><br><span class="line">[</span><br><span class="line">  [-1, 0, 1],</span><br><span class="line">  [-1, -1, 2]</span><br><span class="line">]</span><br></pre></td></tr></tbody></table></figure>
-
-
-
-<h1 id="解法一：暴力解法"><a href="#解法一：暴力解法" class="headerlink" title="解法一：暴力解法"></a>解法一：暴力解法</h1><ul>
-<li>先排序，后暴力遍历，时间复杂度为O(n^3)</li>
-</ul>
-<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>{</span><br><span class="line">    <span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; threeSum(<span class="keyword">int</span>[] nums) {</span><br><span class="line">        List&lt;List&lt;Integer&gt;&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">int</span> len = nums.length;</span><br><span class="line">        <span class="keyword">if</span>(len &lt; <span class="number">3</span>) {</span><br><span class="line">            <span class="keyword">return</span> list;</span><br><span class="line">        }</span><br><span class="line">        <span class="comment">// 排序</span></span><br><span class="line">        Arrays.sort(nums);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i ++){</span><br><span class="line">            <span class="keyword">int</span> x = nums[i];</span><br><span class="line">            <span class="keyword">if</span>(x &gt; <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">            <span class="comment">// 去重</span></span><br><span class="line">            <span class="keyword">if</span> (i &gt; <span class="number">0</span> &amp;&amp; nums[i] == nums[i-<span class="number">1</span>]) <span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; len; j ++ ){</span><br><span class="line">                <span class="keyword">int</span> y = nums[j]; </span><br><span class="line">                <span class="keyword">if</span>(y+x&gt;<span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">                <span class="comment">// 去重</span></span><br><span class="line">                <span class="keyword">if</span> (j &gt; i + <span class="number">1</span> &amp;&amp; nums[j] == nums[j-<span class="number">1</span>]) <span class="keyword">continue</span>;</span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> k = j + <span class="number">1</span>; k &lt; len; k ++){</span><br><span class="line">                    <span class="keyword">int</span> z = nums[k];</span><br><span class="line">                    <span class="keyword">if</span>(z + x + y &gt; <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">                    <span class="comment">// 去重</span></span><br><span class="line">                    <span class="keyword">if</span> (k &gt; j + <span class="number">1</span> &amp;&amp; nums[k] == nums[k-<span class="number">1</span>]) <span class="keyword">continue</span>;</span><br><span class="line">                    </span><br><span class="line">                    <span class="keyword">if</span>(nums[i] + nums[j] == -nums[k]){</span><br><span class="line">                        List&lt;Integer&gt; temp = <span class="keyword">new</span> ArrayList(<span class="number">3</span>);</span><br><span class="line">                        temp.add(nums[i]);</span><br><span class="line">                        temp.add(nums[j]);</span><br><span class="line">                        temp.add(nums[k]);</span><br><span class="line">                        list.add(temp);</span><br><span class="line">                    }</span><br><span class="line">                }</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> list;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-
-<ul>
-<li>注： 在leetcode上超时</li>
-</ul>
-<h1 id="解法二：-暴力解法-hashmap"><a href="#解法二：-暴力解法-hashmap" class="headerlink" title="解法二： 暴力解法+hashmap"></a>解法二： 暴力解法+hashmap</h1><figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>{</span><br><span class="line">    <span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; threeSum(<span class="keyword">int</span>[] nums) {</span><br><span class="line">        List&lt;List&lt;Integer&gt;&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">int</span> len = nums.length;</span><br><span class="line">        <span class="keyword">if</span>(len &lt; <span class="number">3</span>) {</span><br><span class="line">            <span class="keyword">return</span> list;</span><br><span class="line">        }</span><br><span class="line">        Arrays.sort(nums);</span><br><span class="line">        Map&lt;Integer,Integer&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        <span class="comment">// 将数组存放到map中</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) {</span><br><span class="line">            map.put(nums[i],i);</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i ++){</span><br><span class="line">            <span class="keyword">int</span> x = nums[i];</span><br><span class="line">            <span class="keyword">if</span> (x &gt; <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">if</span> (i &gt; <span class="number">0</span> &amp;&amp; nums[i] == nums[i-<span class="number">1</span>]) <span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; len; j ++ ){</span><br><span class="line">                <span class="keyword">int</span> y = nums[j];</span><br><span class="line">                <span class="comment">// x + y &gt; 0表示后面的和一定大于0</span></span><br><span class="line">                <span class="keyword">if</span> (x + y &gt; <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">                <span class="comment">// 去重</span></span><br><span class="line">                <span class="keyword">if</span> (j &gt; i + <span class="number">1</span> &amp;&amp; nums[j] == nums[j-<span class="number">1</span>]) <span class="keyword">continue</span>;</span><br><span class="line">                <span class="keyword">int</span> z = <span class="number">0</span> - x - y;</span><br><span class="line">                <span class="comment">// 判断z是否在map中且z的index &gt; j || i</span></span><br><span class="line">                <span class="keyword">if</span> (map.containsKey(z) &amp;&amp; map.get(z) &gt; j){</span><br><span class="line">                    List&lt;Integer&gt; temp = <span class="keyword">new</span> ArrayList&lt;&gt;(<span class="number">3</span>);</span><br><span class="line">                    temp.add(x);</span><br><span class="line">                    temp.add(y);</span><br><span class="line">                    temp.add(z);</span><br><span class="line">                    list.add(temp);</span><br><span class="line">                }</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> list;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-
-
-
-<h1 id="解法三：左右指针"><a href="#解法三：左右指针" class="headerlink" title="解法三：左右指针"></a>解法三：左右指针</h1><figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line">List&lt;List&lt;Integer&gt;&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line"> <span class="keyword">int</span> len = nums.length;</span><br><span class="line"> <span class="keyword">if</span> (len &lt; <span class="number">3</span>) {</span><br><span class="line">     <span class="keyword">return</span> list;</span><br><span class="line"> }</span><br><span class="line"> Arrays.sort(nums);</span><br><span class="line"> <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++) {</span><br><span class="line">     <span class="comment">// 当第一个数大于0时，说明该集合的和大于0；</span></span><br><span class="line">     <span class="keyword">if</span> (nums[i] &gt; <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">     <span class="comment">// 去重</span></span><br><span class="line">     <span class="keyword">if</span> (i &gt; <span class="number">0</span> &amp;&amp; nums[i] == nums[i - <span class="number">1</span>]) <span class="keyword">continue</span>;</span><br><span class="line">     <span class="keyword">int</span> l = i + <span class="number">1</span>;</span><br><span class="line">     <span class="keyword">int</span> r = nums.length - <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">     <span class="keyword">while</span> (l &lt; r){</span><br><span class="line">         <span class="keyword">int</span> num = nums[l] + nums[i] + nums[r];</span><br><span class="line">         <span class="comment">// 当三个数的和大于0时，l指针左移，且去重</span></span><br><span class="line">         <span class="keyword">if</span> (num &gt; <span class="number">0</span>){</span><br><span class="line">             <span class="keyword">while</span> (l &lt; r &amp;&amp; nums[r] == nums[--r]);</span><br><span class="line">         }</span><br><span class="line">         <span class="comment">// 当三个数的和小于0时，r指针右移，且去重</span></span><br><span class="line">         <span class="keyword">else</span> <span class="keyword">if</span> (num &lt; <span class="number">0</span>){</span><br><span class="line">             <span class="keyword">while</span> (l &lt; r &amp;&amp; nums[l] == nums[++l]);</span><br><span class="line">         }</span><br><span class="line">         <span class="comment">// 当三个数的等于0时，存放结果，左右去重</span></span><br><span class="line">         <span class="keyword">else</span> {</span><br><span class="line">             List&lt;Integer&gt; temp = <span class="keyword">new</span> ArrayList&lt;&gt;(<span class="number">3</span>);</span><br><span class="line">             temp.add(nums[l]);</span><br><span class="line">             temp.add(nums[i]);</span><br><span class="line">             temp.add(nums[r]);</span><br><span class="line">             list.add(temp);</span><br><span class="line">             <span class="comment">// 右去重</span></span><br><span class="line">             <span class="keyword">while</span> (l &lt; r &amp;&amp; nums[r] == nums[--r]);</span><br><span class="line">             <span class="comment">// 左去重</span></span><br><span class="line">             <span class="keyword">while</span> (l &lt; r &amp;&amp; nums[l] == nums[++l]);</span><br><span class="line">         }</span><br><span class="line">     }</span><br><span class="line"></span><br><span class="line"> }</span><br><span class="line"> <span class="keyword">return</span> list;</span><br></pre></td></tr></tbody></table></figure>
-
-]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>求和</tag>
-        <tag>排序</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>SpringBoot定时任务</title>
-    <url>/2020/11/14/springboot-ding-shi-ren-wu/</url>
-    <content><![CDATA[<h1 id="SpringBoot定时任务"><a href="#SpringBoot定时任务" class="headerlink" title="SpringBoot定时任务"></a>SpringBoot定时任务</h1><p>SpringBoot创建定时任务的方式：</p>
-<ul>
-<li>基于注解（@Scheduled）</li>
-<li>基于接口（SchedulingConfigurer）</li>
-<li>基于注解设定多线程定时任务</li>
-</ul>
-<h1 id="静态：基于注解"><a href="#静态：基于注解" class="headerlink" title="静态：基于注解"></a>静态：基于注解</h1><p>在SpringBoot中，使用@Scheduled创建定时任务，代码如下：</p>
-<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@EnableScheduling</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StaticScheduledTask</span> </span>{</span><br><span class="line">    <span class="meta">@Scheduled(cron = "0/5 * * * * ?")</span></span><br><span class="line">    <span class="comment">//@Scheduled(fixedRate = 5000)</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">configureTasks</span><span class="params">()</span></span>{</span><br><span class="line">        System.out.println(<span class="string">"执行定时任务，当前时间为："</span>+ LocalDateTime.now());</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-
-<ul>
-<li><p>@Configuration: 配置类</p>
-</li>
-<li><p>@EnableScheduling：开启定时任务</p>
-</li>
-<li><p>@Scheduled的cron表达式解释：一个cron表达式有至少6个（也可能7个）有空格分隔的时间元素，顺序依次为：秒，分，小时，天，月，星期，年份</p>
-</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>符号</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>/</td>
-<td>3/5 * * * * * ?：表示从第五秒开始，每五秒执行一次</td>
-</tr>
-<tr>
-<td>，</td>
-<td>0 0 9,6 * * ? ：早九晚六</td>
-</tr>
-<tr>
-<td>?</td>
-<td>仅作用于天和星期上，表示不指定值</td>
-</tr>
-<tr>
-<td>L</td>
-<td>当只有L这个符号，表示最后，0 0 L * * ?，表示24小时中的23:00:00，0 0 3L * * ?表示20:00:00</td>
-</tr>
-<tr>
-<td>*</td>
-<td>* 有每个的意思，0 0 0 0 * ？：表示 表示每个月的第一天00:00:00</td>
-</tr>
-<tr>
-<td>#</td>
-<td>是用来指定“的”每月第n个工作日,例 在每周（day-of-week）这个字段中内容为”6#3” or “FRI#3” 则表示“每月第三个星期五”；</td>
-</tr>
-<tr>
-<td>W</td>
-<td>表示为最近工作日，如“15W”放在每月（day-of-month）字段上表示为“到本月15日最近的工作日”；</td>
-</tr>
-</tbody></table>
-<ul>
-<li>每个字段的允许值以及允许符号</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>字段</th>
-<th>允许值</th>
-<th>符号</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>秒</td>
-<td>0-59</td>
-<td>，- */</td>
-</tr>
-<tr>
-<td>分</td>
-<td>0-59</td>
-<td>，-*/</td>
-</tr>
-<tr>
-<td>时</td>
-<td>0-23</td>
-<td>，-*/</td>
-</tr>
-<tr>
-<td>日</td>
-<td>1-31</td>
-<td>，-*？/LWC</td>
-</tr>
-<tr>
-<td>月份</td>
-<td>1-12或者JAN-DEC</td>
-<td>，-*/</td>
-</tr>
-<tr>
-<td>星期</td>
-<td>1-7或者SUM-SAT</td>
-<td>，-*？/LC#</td>
-</tr>
-<tr>
-<td>年（可选）</td>
-<td>留空，1970-2099</td>
-<td>，-*/</td>
-</tr>
-</tbody></table>
-<h1 id="动态：基于接口"><a href="#动态：基于接口" class="headerlink" title="动态：基于接口"></a>动态：基于接口</h1><p>使用SchedulingConfigurer</p>
-<ul>
-<li>添加已来到pom.xml中</li>
-</ul>
-<figure class="highlight xml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.zaxxer<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>HikariCP<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-jdbc<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">exclusions</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 排除 tomcat-jdbc 以使用 HikariCP --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">exclusion</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.tomcat<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>tomcat-jdbc<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">exclusion</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">exclusions</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>mysql<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mysql-connector-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.mybatis.spring.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis-spting-boot-starter<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.1.3<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
-
-<ul>
-<li>创建数据库：</li>
-</ul>
-<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line">CREATE TABLE `cron` (</span><br><span class="line">  `cron_id` varchar(<span class="number">30</span>) COLLATE utf8_bin NOT NULL,</span><br><span class="line">  `cron` varchar(<span class="number">30</span>) COLLATE utf8_bin NOT NULL,</span><br><span class="line">  <span class="function">PRIMARY <span class="title">KEY</span> <span class="params">(`cron_id`)</span></span></span><br><span class="line"><span class="function">) ENGINE</span>=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;</span><br></pre></td></tr></tbody></table></figure>
-
-<ul>
-<li>配置文件</li>
-</ul>
-<figure class="highlight yml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="attr">datasource:</span></span><br><span class="line">    <span class="attr">type:</span> <span class="string">com.zaxxer.hikari.HikariDataSource</span></span><br><span class="line">    <span class="attr">driver-class-name:</span> <span class="string">com.mysql.cj.jdbc.Driver</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">jdbc:mysql://localhost:3306/scheduled?useUnicode=true&amp;characterEncoding=utf-8&amp;useSSL=false</span></span><br><span class="line">    <span class="attr">username:</span> <span class="string">root</span></span><br><span class="line">    <span class="attr">password:</span> <span class="number">13112110947</span></span><br><span class="line">    <span class="attr">hikari:</span></span><br><span class="line">      <span class="attr">minimum-idle:</span> <span class="number">5</span></span><br><span class="line">      <span class="attr">idle-timeout:</span> <span class="number">600000</span></span><br><span class="line">      <span class="attr">maximum-pool-size:</span> <span class="number">10</span></span><br><span class="line">      <span class="attr">auto-commit:</span> <span class="literal">true</span></span><br><span class="line">      <span class="attr">pool-name:</span> <span class="string">MyHikariCP</span></span><br><span class="line">      <span class="attr">max-lifetime:</span> <span class="number">1800000</span></span><br><span class="line">      <span class="attr">connection-timeout:</span> <span class="number">30000</span></span><br><span class="line">      <span class="attr">connection-test-query:</span> <span class="string">SELECT</span> <span class="number">1</span></span><br><span class="line">  <span class="attr">mybatis:</span></span><br><span class="line">    <span class="attr">type-aliases-package:</span> <span class="string">com.kxq.scheduleddemo.domain</span></span><br><span class="line">    <span class="attr">mapper-locations:</span> <span class="string">classpath:mapper/*.xml</span></span><br></pre></td></tr></tbody></table></figure>
-
-<ul>
-<li>domain：</li>
-</ul>
-<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Cron</span> <span class="keyword">implements</span> <span class="title">Serializable</span> </span>{</span><br><span class="line">    <span class="keyword">private</span> String cronId;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String cron;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">long</span> serialVersionUID = <span class="number">1L</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-
-<ul>
-<li>mapper</li>
-</ul>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">@Mapper</span><br><span class="line">public interface CronMapper {</span><br><span class="line">    /**</span><br><span class="line">     * 获取cron表达式</span><br><span class="line">     * @return</span><br><span class="line">     */</span><br><span class="line">    @Select("select cron from cron limit 1")</span><br><span class="line">    String getCron();</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-
-<ul>
-<li>核心代码</li>
-</ul>
-<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@EnableScheduling</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DynamicScheduleTask</span> <span class="keyword">implements</span> <span class="title">SchedulingConfigurer</span> </span>{</span><br><span class="line">    <span class="meta">@Resource</span></span><br><span class="line">    <span class="keyword">private</span> CronMapper cronMapper;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">configureTasks</span><span class="params">(ScheduledTaskRegistrar scheduledTaskRegistrar)</span> </span>{</span><br><span class="line">        scheduledTaskRegistrar.addTriggerTask(</span><br><span class="line">                <span class="comment">// 添加执行任务</span></span><br><span class="line">                ()-&gt; System.out.println(<span class="string">"执行任务的时间为："</span>+ LocalDateTime.now()),</span><br><span class="line">                <span class="comment">// 设置执行周期</span></span><br><span class="line">                triggerContext -&gt; {</span><br><span class="line">                    <span class="comment">//2.1 从数据库获取执行周期</span></span><br><span class="line">                    String cron = cronMapper.getCron();</span><br><span class="line">                    <span class="comment">//2.2 合法性校验.</span></span><br><span class="line">                    <span class="keyword">if</span> (StringUtils.isEmpty(cron)) {</span><br><span class="line">                        <span class="comment">// Omitted Code ..</span></span><br><span class="line">                    }</span><br><span class="line">                    <span class="comment">//2.3 返回执行周期(Date)</span></span><br><span class="line">                    <span class="keyword">return</span> <span class="keyword">new</span> CronTrigger(cron).nextExecutionTime(triggerContext);</span><br><span class="line">                }</span><br><span class="line">        );</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-
-<ul>
-<li>执行结果</li>
-</ul>
-<p><img src="https://gitee.com/kexiquan/picture/raw/master/uPic/image-20201114165212982.png" alt="image-20201114165212982"></p>
-<h1 id="多线程定时任务"><a href="#多线程定时任务" class="headerlink" title="多线程定时任务"></a>多线程定时任务</h1><ul>
-<li>代码</li>
-</ul>
-<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@EnableScheduling</span></span><br><span class="line"><span class="meta">@EnableAsync</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MultiThreadScheduledTask</span> </span>{</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Async</span></span><br><span class="line">    <span class="meta">@Scheduled(fixedDelay = 1000)</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">task1</span><span class="params">()</span></span>{</span><br><span class="line">        System.out.println(<span class="string">"第一个任务的执行时间："</span>+ LocalDateTime.now());</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Async</span></span><br><span class="line">    <span class="meta">@Scheduled(fixedDelay = 2000)</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">task2</span><span class="params">()</span></span>{</span><br><span class="line">        System.out.println(<span class="string">"第二个任务的执行时间："</span>+LocalDateTime.now());</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
-
-
-
-<ul>
-<li>结果</li>
-</ul>
-<p><img src="https://gitee.com/kexiquan/picture/raw/master/uPic/image-20201114170102499.png" alt="image-20201114170102499"></p>
-<p>任务一的执行间隔为1s，任务二的执行间隔为2s</p>
-]]></content>
-      <categories>
-        <category>SpringBoot</category>
-      </categories>
-      <tags>
-        <tag>定时任务</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Fusion安装centos</title>
-    <url>/2020/11/24/fusion-an-zhuang-centos/</url>
-    <content><![CDATA[<h1 id="CentOS镜像"><a href="#CentOS镜像" class="headerlink" title="CentOS镜像"></a>CentOS镜像</h1><p><a href="https://mirrors.huaweicloud.com/centos/7.9.2009/isos/x86_64/CentOS-7-x86_64-Minimal-2009.iso">CentOS7</a></p>
-<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><h2 id="将下载好的镜像拖放到图中的位置"><a href="#将下载好的镜像拖放到图中的位置" class="headerlink" title="将下载好的镜像拖放到图中的位置"></a>将下载好的镜像拖放到图中的位置</h2><p><img src="https://gitee.com/kexiquan/picture/raw/master/uPic/image-20201124201941346.png" alt="image-20201124201941346"></p>
-<h2 id="点击继续"><a href="#点击继续" class="headerlink" title="点击继续"></a>点击继续</h2><p><img src="https://gitee.com/kexiquan/picture/raw/master/uPic/image-20201124202043894.png" alt="image-20201124202043894"></p>
-<h2 id="点击传统bios，继续"><a href="#点击传统bios，继续" class="headerlink" title="点击传统bios，继续"></a>点击传统bios，继续</h2><p><img src="https://gitee.com/kexiquan/picture/raw/master/uPic/image-20201124202105777.png" alt="image-20201124202105777"></p>
-<h2 id="自己重命名，存储"><a href="#自己重命名，存储" class="headerlink" title="自己重命名，存储"></a>自己重命名，存储</h2><p><img src="https://gitee.com/kexiquan/picture/raw/master/uPic/image-20201124202134475.png" alt="image-20201124202134475"></p>
-<h2 id="点击三角符号"><a href="#点击三角符号" class="headerlink" title="点击三角符号"></a>点击三角符号</h2><p><img src="https://gitee.com/kexiquan/picture/raw/master/uPic/image-20201124202151862.png" alt="image-20201124202151862"></p>
-<h2 id="鼠标点进，将光标移到install-CentOS7"><a href="#鼠标点进，将光标移到install-CentOS7" class="headerlink" title="鼠标点进，将光标移到install CentOS7"></a>鼠标点进，将光标移到install CentOS7</h2><p><img src="https://gitee.com/kexiquan/picture/raw/master/uPic/image-20201124202203915.png" alt="image-20201124202203915"></p>
-<h2 id="等待"><a href="#等待" class="headerlink" title="等待"></a>等待</h2><p><img src="https://gitee.com/kexiquan/picture/raw/master/uPic/image-20201124202216630.png" alt="image-20201124202216630"></p>
-<h2 id="选择语言，继续"><a href="#选择语言，继续" class="headerlink" title="选择语言，继续"></a>选择语言，继续</h2><p><img src="https://gitee.com/kexiquan/picture/raw/master/uPic/image-20201124202250016.png" alt="image-20201124202250016"></p>
-<h2 id="选择安装位置"><a href="#选择安装位置" class="headerlink" title="选择安装位置"></a>选择安装位置</h2><p><img src="https://gitee.com/kexiquan/picture/raw/master/uPic/image-20201124202321010.png" alt="image-20201124202321010"></p>
-<h2 id="选择分配好的磁盘，完成"><a href="#选择分配好的磁盘，完成" class="headerlink" title="选择分配好的磁盘，完成"></a>选择分配好的磁盘，完成</h2><p><img src="https://gitee.com/kexiquan/picture/raw/master/uPic/image-20201124202339039.png" alt="image-20201124202339039"></p>
-<h2 id="开始安装"><a href="#开始安装" class="headerlink" title="开始安装"></a>开始安装</h2><p><img src="https://gitee.com/kexiquan/picture/raw/master/uPic/image-20201124202349948.png" alt="image-20201124202349948"></p>
-<h2 id="设置Root密码，也可以创建用户，建议只是学习，可以不创建用户，直接使用root"><a href="#设置Root密码，也可以创建用户，建议只是学习，可以不创建用户，直接使用root" class="headerlink" title="设置Root密码，也可以创建用户，建议只是学习，可以不创建用户，直接使用root"></a>设置Root密码，也可以创建用户，建议只是学习，可以不创建用户，直接使用root</h2><p><img src="https://gitee.com/kexiquan/picture/raw/master/uPic/image-20201124202454418.png" alt="image-20201124202454418"></p>
-<p><img src="https://gitee.com/kexiquan/picture/raw/master/uPic/image-20201124202429903.png" alt="image-20201124202429903"></p>
-<h2 id="重启"><a href="#重启" class="headerlink" title="重启"></a>重启</h2><p><img src="https://gitee.com/kexiquan/picture/raw/master/uPic/image-20201124203240424.png" alt="image-20201124203240424"></p>
-<h1 id="设置静态ip"><a href="#设置静态ip" class="headerlink" title="设置静态ip"></a>设置静态ip</h1><h2 id="查看fusion的网关，子网掩码"><a href="#查看fusion的网关，子网掩码" class="headerlink" title="查看fusion的网关，子网掩码"></a>查看fusion的网关，子网掩码</h2><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">vim  /Library/Preferences/VMware\ Fusion/vmnet8/nat.conf </span><br></pre></td></tr></tbody></table></figure>
-
-<p><img src="https://gitee.com/kexiquan/picture/raw/master/uPic/image-20201124204207363.png" alt="image-20201124204207363"></p>
-<h2 id="到虚拟机里修改网络配置文件"><a href="#到虚拟机里修改网络配置文件" class="headerlink" title="到虚拟机里修改网络配置文件"></a>到虚拟机里修改网络配置文件</h2><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">vi /etc/sysconfig/network-scripts/ifcfg-ens33</span><br></pre></td></tr></tbody></table></figure>
-
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">TYPE=Ethernet</span><br><span class="line">PROXY_METHOD=none</span><br><span class="line">BROWSER_ONLY=no</span><br><span class="line"># BOOTPROTO=dhcp # 关闭自动分配</span><br><span class="line">DEFROUTE=yes</span><br><span class="line">IPV4_FAILURE_FATAL=no</span><br><span class="line">IPV6INIT=yes</span><br><span class="line">IPV6_AUTOCONF=yes</span><br><span class="line">IPV6_DEFROUTE=yes</span><br><span class="line">IPV6_FAILURE_FATAL=no</span><br><span class="line"># IPV6_ADDR_GEN_MODE=stable-privacy</span><br><span class="line">NAME=ens33</span><br><span class="line">UUID=360a8364-ce02-4141-88cd-6b77539e9bde</span><br><span class="line">DEVICE=ens33</span><br><span class="line"># ONBOOT=no</span><br><span class="line"># 添加的内容</span><br><span class="line">BOOTPROTO=static</span><br><span class="line">ONBOOT=yes</span><br><span class="line">IPADDR=172.16.233.129</span><br><span class="line">GATEWAY=172.16.233.1</span><br><span class="line">NETMASK=255.255.255.0</span><br><span class="line">DNS1=192.168.0.1</span><br><span class="line">DNS2=114.114.114.114</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
-
-<h2 id="退出，重启网络服务"><a href="#退出，重启网络服务" class="headerlink" title="退出，重启网络服务"></a>退出，重启网络服务</h2><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">systemctl restart network</span><br></pre></td></tr></tbody></table></figure>
-
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>安装系统</tag>
-        <tag>CentOS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>CentOS安装docker</title>
-    <url>/2020/11/24/centos-an-zhuang-docker/</url>
-    <content><![CDATA[<h1 id="卸载旧版本（以前没有安装过可跳过）"><a href="#卸载旧版本（以前没有安装过可跳过）" class="headerlink" title="卸载旧版本（以前没有安装过可跳过）"></a>卸载旧版本（以前没有安装过可跳过）</h1><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">yum remove docker \</span><br><span class="line">                  docker-client \</span><br><span class="line">                  docker-client-latest \</span><br><span class="line">                  docker-common \</span><br><span class="line">                  docker-latest \</span><br><span class="line">                  docker-latest-logrotate \</span><br><span class="line">                  docker-logrotate \</span><br><span class="line">                  docker-engine</span><br></pre></td></tr></tbody></table></figure>
-
-<h1 id="更新yum包到最新-生产环境尽量不要使用"><a href="#更新yum包到最新-生产环境尽量不要使用" class="headerlink" title="更新yum包到最新(生产环境尽量不要使用)"></a>更新yum包到最新(生产环境尽量不要使用)</h1><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">yum update</span><br></pre></td></tr></tbody></table></figure>
-
-<h1 id="安装docker依赖包"><a href="#安装docker依赖包" class="headerlink" title="安装docker依赖包"></a>安装docker依赖包</h1><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">yum install -y yum-utils device-mapper-persistent-data lvm2</span><br></pre></td></tr></tbody></table></figure>
-
-<h1 id="设置yum源"><a href="#设置yum源" class="headerlink" title="设置yum源"></a>设置yum源</h1><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo</span><br></pre></td></tr></tbody></table></figure>
-
-<h1 id="查看所有仓库的docker版本"><a href="#查看所有仓库的docker版本" class="headerlink" title="查看所有仓库的docker版本"></a>查看所有仓库的docker版本</h1><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">yum list docker-ce --showduplicates | sort -r</span><br><span class="line">已加载插件：fastestmirror</span><br><span class="line">可安装的软件包</span><br><span class="line"> * updates: mirrors.aliyun.com</span><br><span class="line">Loading mirror speeds from cached hostfile</span><br><span class="line"> * extras: mirrors.aliyun.com</span><br><span class="line">docker-ce.x86_64            3:19.03.9-3.el7                     docker-ce-stable</span><br><span class="line">docker-ce.x86_64            3:19.03.8-3.el7                     docker-ce-stable</span><br><span class="line">docker-ce.x86_64            3:19.03.7-3.el7                     docker-ce-stable</span><br><span class="line">docker-ce.x86_64            3:19.03.6-3.el7                     docker-ce-stable</span><br><span class="line">docker-ce.x86_64            3:19.03.5-3.el7                     docker-ce-stable</span><br><span class="line">docker-ce.x86_64            3:19.03.4-3.el7                     docker-ce-stable</span><br><span class="line">docker-ce.x86_64            3:19.03.3-3.el7                     docker-ce-stable</span><br><span class="line">docker-ce.x86_64            3:19.03.2-3.el7                     docker-ce-stable</span><br><span class="line">docker-ce.x86_64            3:19.03.1-3.el7                     docker-ce-stable</span><br><span class="line">docker-ce.x86_64            3:19.03.13-3.el7                    docker-ce-stable</span><br><span class="line">...</span><br></pre></td></tr></tbody></table></figure>
-
-<h1 id="指定版本安装，我这里用的是docker-ce-18-06-3-ce"><a href="#指定版本安装，我这里用的是docker-ce-18-06-3-ce" class="headerlink" title="指定版本安装，我这里用的是docker-ce-18.06.3.ce"></a>指定版本安装，我这里用的是docker-ce-18.06.3.ce</h1><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">yum install docker-ce-18.06.3.ce</span><br></pre></td></tr></tbody></table></figure>
-
-<h1 id="启动docker"><a href="#启动docker" class="headerlink" title="启动docker"></a>启动docker</h1><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">[root@docker-base yum.repos.d]# systemctl start docker</span><br><span class="line">[root@docker-base yum.repos.d]# systemctl enable docker</span><br><span class="line">Created symlink from /etc/systemd/system/multi-user.target.wants/docker.service to /usr/lib/systemd/system/docker.service.</span><br></pre></td></tr></tbody></table></figure>
-
-<h1 id="验证安装是否成功"><a href="#验证安装是否成功" class="headerlink" title="验证安装是否成功"></a>验证安装是否成功</h1><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">[root@docker-base yum.repos.d]# docker version</span><br><span class="line">Client:</span><br><span class="line"> Version:           18.06.3-ce</span><br><span class="line"> API version:       1.38</span><br><span class="line"> Go version:        go1.10.3</span><br><span class="line"> Git commit:        d7080c1</span><br><span class="line"> Built:             Wed Feb 20 02:26:51 2019</span><br><span class="line"> OS/Arch:           linux/amd64</span><br><span class="line"> Experimental:      false</span><br><span class="line"></span><br><span class="line">Server:</span><br><span class="line"> Engine:</span><br><span class="line">  Version:          18.06.3-ce</span><br><span class="line">  API version:      1.38 (minimum version 1.12)</span><br><span class="line">  Go version:       go1.10.3</span><br><span class="line">  Git commit:       d7080c1</span><br><span class="line">  Built:            Wed Feb 20 02:28:17 2019</span><br><span class="line">  OS/Arch:          linux/amd64</span><br><span class="line">  Experimental:     false</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
-
-<h1 id="更换镜像源加速"><a href="#更换镜像源加速" class="headerlink" title="更换镜像源加速"></a>更换镜像源加速</h1><figure class="highlight json"><table><tbody><tr><td class="code"><pre><span class="line">vi /etc/docker/daemon.json</span><br><span class="line"># 内容</span><br><span class="line">{</span><br><span class="line">  <span class="attr">"registry-mirrors"</span> : [</span><br><span class="line">    <span class="string">"http://hub-mirror.c.163.com"</span>,</span><br><span class="line">    <span class="string">"https://registry.docker-cn.com"</span>,</span><br><span class="line">    <span class="string">"https://docker.mirrors.ustc.edu.cn"</span></span><br><span class="line">  ],</span><br><span class="line">  <span class="attr">"insecure-registries"</span> : [</span><br><span class="line">    <span class="string">"registry.docker-cn.com"</span>,</span><br><span class="line">    <span class="string">"docker.mirrors.ustc.edu.cn"</span></span><br><span class="line">  ],</span><br><span class="line">  <span class="attr">"debug"</span> : <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">"experimental"</span> : <span class="literal">true</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-
-<h1 id="重启docker服务"><a href="#重启docker服务" class="headerlink" title="重启docker服务"></a>重启docker服务</h1><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">systemctl restart docker</span><br></pre></td></tr></tbody></table></figure>
-
-<h1 id="运行第一个容器hello-world"><a href="#运行第一个容器hello-world" class="headerlink" title="运行第一个容器hello-world"></a>运行第一个容器hello-world</h1><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">[root@docker-base yum.repos.d]# docker run hello-world</span><br><span class="line">Unable to find image 'hello-world:latest' locally</span><br><span class="line">latest: Pulling from library/hello-world</span><br><span class="line">0e03bdcc26d7: Pull complete </span><br><span class="line">Digest: sha256:e7c70bb24b462baa86c102610182e3efcb12a04854e8c582838d92970a09f323</span><br><span class="line">Status: Downloaded newer image for hello-world:latest</span><br><span class="line"></span><br><span class="line">Hello from Docker!</span><br></pre></td></tr></tbody></table></figure>
-
-]]></content>
-      <categories>
-        <category>容器</category>
-      </categories>
-      <tags>
-        <tag>Docker</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>redis常用的命令以及应用场景</title>
-    <url>/2020/11/25/redis-chang-yong-de-ming-ling-yi-ji-ying-yong-chang-jing/</url>
-    <content><![CDATA[<h2 id="通用命令："><a href="#通用命令：" class="headerlink" title="通用命令："></a>通用命令：</h2><p><strong>keys *</strong> [pattern] — 遍历当前reids所有的key O(n)</p>
-<p><strong>dbsize</strong> — 计算key的总数 O(1)</p>
-<p><strong>exists</strong> [key] — 判断key是否存在 O(1)</p>
-<p><strong>del</strong> [key…] — 删除一个或多个指定的key O(1)</p>
-<p><strong>expire</strong> key [seconds] — key在seconds秒后过期 O(1)</p>
-<p><strong>ttl</strong> [key] — 查看key剩余的过期时间 O(1)</p>
-<p><strong>persist</strong> [key] — 去掉key的过期时间 O(1)</p>
-<p><strong>type</strong> [key] — 返回key的数据结构类型 O(1)</p>
-<h2 id="String相关命令："><a href="#String相关命令：" class="headerlink" title="String相关命令："></a>String相关命令：</h2><p><strong>get</strong> [key] — 获取key对应的value O(1)</p>
-<p><strong>mget</strong> [key1 ke2 …] — 批量获取key，原子操作 O(n)</p>
-<p><strong>getset</strong> [key newValue] — 设置key新值为newValue并返回旧的value O(1)</p>
-<p><strong>getrange</strong> [key start end] — 获取字符串指定下标所有的值 O(1)</p>
-<p><strong>set</strong> [key value] — 设置key-value O(1)å</p>
-<p><strong>setrange</strong> [key index value] — 设置指定下标所有对应的值 O(1)</p>
-<p><strong>mset</strong> [key1 value1 key2 value2 …] — 批量设置key-value O(n)</p>
-<p><strong>append</strong> [key value] — 将value追加到旧的value O(1)</p>
-<p><strong>setnx</strong> [key value] — key不存在，才设置 O(1)</p>
-<p><strong>set</strong> [key value xx] — key存在，才设置 O(1)</p>
-<p><strong>setex</strong> [key value seconds] — 设置key，同时设置过期时间 O(1)</p>
-<p><strong>incr</strong> [key] — key自增1，如果key不存在，自增后get(key)=1 O(1)</p>
-<p><strong>decr</strong> [key] — key自减1，如果key不存在，自减后get(key)=-1 O(1)</p>
-<p><strong>incrby</strong> [key k] — key自增k，如果key不存在，自增后get(key)=k O(1)</p>
-<p><strong>incrbyfloat</strong> [key 3.5] — 增加key对应的float值3.5 如需减法，传负值即可 O(1)</p>
-<p><strong>decrby</strong> [key k] — key自减k，如果key不存在，自减后get(key)=-k O(1)</p>
-<p><strong>strlen</strong> [key] — 返回字符串的长度（注意中文占用字节数的问题）O(1)</p>
-<h2 id="string应用场景"><a href="#string应用场景" class="headerlink" title="string应用场景"></a>string应用场景</h2><ul>
-<li>存储字符串和json字符串</li>
-<li>存储图片</li>
-<li>计数器</li>
-</ul>
-<h2 id="Hash相关命令："><a href="#Hash相关命令：" class="headerlink" title="Hash相关命令："></a>Hash相关命令：</h2><p><strong>hget</strong> [key field] — 获取hash key对应的field的value O(1)</p>
-<p><strong>hset</strong> [key field value] — 设置hash key对应的field的value O(1)</p>
-<p><strong>hdel</strong> [key field] — 删除hash key对应的field的value O(1)</p>
-<p><strong>hexists</strong> [key field] — 判断hash key 是否有field O(1)</p>
-<p><strong>hlen</strong> [key] — 获取hash key field的数量，redis内部维护了这个值的计数，而不是每次遍历，效率高 O(1)</p>
-<p><strong>hmget</strong> [key field1 field2 …] — 批量获取hash key的一批field对应的值 O(n)</p>
-<p><strong>hmset</strong> [key field1 field2 …] — 批量设置hash key的一批field的value O(n)</p>
-<p><strong>hincrby</strong> [key field count] — 设置hash key的field字段自增count O(1)</p>
-<p><strong>hincrbyfloat</strong> [key field float] — hincrby的浮点数版 O(1)</p>
-<p><strong>hgetall</strong> [key] — 返回hash key对应所有的field和value O(n)</p>
-<p><strong>hvals</strong> [key] — 返回hash key对应所有field的value O(n)</p>
-<p><strong>hkeys</strong> [key] — 返回hash key对应的所有field O(n)</p>
-<p><strong>hsetnx</strong> [key field value] — 设置hash key对应的field的value 如过field存在，则失败 O(1)</p>
-<h2 id="List相关命令："><a href="#List相关命令：" class="headerlink" title="List相关命令："></a>List相关命令：</h2><p><strong>rpush</strong> [key value1 value2…valueN] — 从列表右端(后端)插入值 (1-N个) O(1~n)</p>
-<p><strong>lpush</strong> [key value1 value2…valueN] — 从列表左侧(头部)插入值 (1-N个) O(1~n)</p>
-<p><strong>linsert</strong> [key before|after value newValue] — 在list指定的值(前 | 后)插入newValue,需要遍历 O(n)</p>
-<p><strong>lpop</strong> [key] — 从列表左侧弹出一个item O(1)</p>
-<p><strong>rpop</strong> [key] — 从列表右侧弹出一个item O(1)</p>
-<p><strong>lrem</strong> [key count value] — 根据count值，从列表中删除所有value相等的项 O(n)</p>
-<p>(1) count &gt; 0，从左到右，删除最多count个与value相等的项</p>
-<p>(2) count &lt; 0，从右到左，删除最多count个与value相等的项</p>
-<p>(3) count = 0，删除list中所有与value相等的项</p>
-<p><strong>ltrim</strong> [key start end] — 按照索引范围修剪列表 O(n)</p>
-<p><strong>lrange</strong> [key start end] — 获取list指定索引范围的所有item，end为-1时，取到末尾 O(n)</p>
-<p><strong>lindex</strong> [key index] — 获取list指定索引的item，index为-1，取最后一个item O(n)</p>
-<p><strong>llen</strong> [key] — 获取list长度，内部优化值 O(1)</p>
-<p><strong>lset</strong> [key index newValue] — 设置list指定索引值为newValue O(n)</p>
-<p><strong>blpop</strong> [key timeout] — lpop阻塞版本，ti meout是阻塞超时时间，timeout=0为永不阻塞 O(1)</p>
-<p><strong>brpop</strong> [key timeout] — rpop阻塞版本，timeout是阻塞超时时间，timeout=0为永不阻塞 O(1)</p>
-<h2 id="Set相关命令："><a href="#Set相关命令：" class="headerlink" title="Set相关命令："></a>Set相关命令：</h2><p><strong>sadd</strong> [key element] — 向集合key添加element(如果element存在，添加失败) O(1)</p>
-<p><strong>srem</strong> [key element] — 将集合key中的element移除掉 O(1)</p>
-<p><strong>scard</strong> [key] — 计算集合大小 O(1)</p>
-<p><strong>sismember</strong> [key value] — 判断value是否在集合中</p>
-<p><strong>srandmember</strong> [key count] — 从集合中随机挑count个元素，只是选取，不会提出</p>
-<p><strong>spop</strong> [key] — 从集合中随机弹出一个元素</p>
-<p><strong>smembers</strong> [key] — 获取集合所有元素，返回结果无序，如果集合大小心使用</p>
-<p><strong>sdiff</strong> [key1 key2] — 取两个集合的差集</p>
-<p><strong>sinter</strong> [key1 key2] — 取两个集合的交集</p>
-<p><strong>sunion</strong> [key1 key2] — 取两个集合的并集</p>
-<p><strong>sdiff | sinter | sunion + store destkey</strong> — 将差集、交集、并集结果保存到destkey中</p>
-<h2 id="Zset相关命令："><a href="#Zset相关命令：" class="headerlink" title="Zset相关命令："></a>Zset相关命令：</h2><p><strong>zadd</strong> [key score element(可以是多对)] — 向集合中添加score和element O(logN)</p>
-<p><strong>zrem</strong> [key element(可以是多个)] — 删除集合中元素 O(1)</p>
-<p><strong>zscore</strong> [key element] — 返回改元素的分数 O(1)</p>
-<p><strong>zincrby</strong> [key increScore element] — 增加或减少元素分数 O(1)</p>
-<p><strong>zcard</strong> [key] — 返回元素的总个数 O(1)</p>
-<p><strong>zrank</strong> [key element] — 返回element在集合中的排名，从小到大排</p>
-<p><strong>zrevrank</strong> [key element] — 返回element在集合中的排名，从大到小排</p>
-<p><strong>zrange</strong> [key start end withscores] — 获取指定排名范围的的元素和它的分数，可以不带withscores，即不打印分数 O(log(n)+m)</p>
-<p><strong>zrevrange</strong> [key start end withscores] — zrange的倒序版本</p>
-<p><strong>zrangebyscore</strong> [key minScore maxScore withscores] — 返回指定分数范围的升序元素 O(log(n)+m)</p>
-<p><strong>zrevrangebyscore</strong> [key minScore maxScore withscores] — zrangebyscore降序版本</p>
-<p><strong>zcount</strong> [key minScore maxScore] — 返回有序集合指定分数范围的元素个数 O(log(n)+m)</p>
-<p><strong>zremrangebyrank</strong> [key start end] — 删除指定排名内的升序元素 O(log(n)+m)</p>
-<p><strong>zremrangebyscore</strong> [key minScore maxScore] — 删除指定分数内的升序元素 O(log(n)+m)</p>
-<p><strong>zinterstore</strong> — 取两集合交集并存储</p>
-<p><strong>zunionstore</strong> — 取两集合并集并存储</p>
-<h2 id="Bitmap相关命令："><a href="#Bitmap相关命令：" class="headerlink" title="Bitmap相关命令："></a>Bitmap相关命令：</h2><p><strong>setbit</strong> [key offset value] — 给位图指定索引设置值（0或1）注意offset偏移量设置，可能有较大耗时</p>
-<p><strong>getbit</strong> [key offset] — 获取位图指定索引的值</p>
-<p><strong>bitcount</strong> [key start end] — 获取位图指定范围内（start到end，单位为字节，如果不指定就是获取全部）值为1的个数</p>
-<p><strong>bitop</strong> [op destkey key…] — 做多个bitmap的and、or、not、xor操作，并将结果保存在destkey中</p>
-<p><strong>bitpos</strong> [key targetBit start end] — 计算位图指定范围（start到end，单位为字节，如果不指定就是获取全部）第一个偏移量对应的值等于targetBit（0或1）的位置</p>
-<h2 id="HyperLoglog相关命令：存储的是基数"><a href="#HyperLoglog相关命令：存储的是基数" class="headerlink" title="HyperLoglog相关命令：存储的是基数"></a>HyperLoglog相关命令：存储的是基数</h2><p><strong>pfadd</strong> [key element…] — 向hyperloglog添加元素</p>
-<p><strong>pfcount</strong> [key…] — 计算hyperloglog的独立总数</p>
-<p><strong>pfmerge</strong> [destkey sourcekey…] — 合并多个sourcekey到destkey</p>
-<p>GEO相关命令（redis3.2版本）：</p>
-<p><strong>geoadd</strong> [key longitude latitude member …] — 增加一个或多个地理位置信息</p>
-<p><strong>geopos</strong> [key member…] — 获取一个或多个member的经纬度</p>
-<p><strong>geodist</strong> [key member1 member2 unit] — 按某个单位（unit：m、km、mi、ft）获取两个地理位置的距离</p>
-<p><strong>georadius</strong> — 功能参数太多，使用查api</p>
-<ul>
-<li>geo说明：</li>
-</ul>
-<p>type geoKey = zset </p>
-<p>没有删除api：zrem key member</p>
-<h1 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h1><p><strong>基数不大，数据量不大就用不上，会有点大材小用，浪费空间</strong></p>
-<p><strong>有局限性，就是只能统计基数数量，不知道具体内容</strong></p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">统计注册ip数</span><br><span class="line">统计每日访问ip数</span><br><span class="line">统计页面实时UV数</span><br><span class="line">统计在线用户数</span><br><span class="line">统计每天搜索不同词条的个数</span><br><span class="line">统计真实文章阅读数	</span><br></pre></td></tr></tbody></table></figure>
-
-<h2 id="string"><a href="#string" class="headerlink" title="string"></a>string</h2><h3 id="计时器"><a href="#计时器" class="headerlink" title="计时器"></a>计时器</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"># 文章的阅读数</span><br><span class="line">incr article:readcount:{id}</span><br><span class="line">get article:readcount:{id}</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="web集群sesson共享"><a href="#web集群sesson共享" class="headerlink" title="web集群sesson共享"></a>web集群sesson共享</h3><p>spring session + redis实现session共享</p>
-<h3 id="分布式系统全局序列号"><a href="#分布式系统全局序列号" class="headerlink" title="分布式系统全局序列号"></a>分布式系统全局序列号</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"># </span><br><span class="line">incrby orderId 1000</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="单值缓存"><a href="#单值缓存" class="headerlink" title="单值缓存"></a>单值缓存</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">set key value</span><br><span class="line">get key</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="对象缓存"><a href="#对象缓存" class="headerlink" title="对象缓存"></a>对象缓存</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">set user:1 value(json数据格式)</span><br><span class="line">mset user:1:name zhangsan user:1:age 12 user:1:addr guangdong</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="分布式锁"><a href="#分布式锁" class="headerlink" title="分布式锁"></a>分布式锁</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"># 加锁</span><br><span class="line">set lockname true ex 10 nx</span><br><span class="line"># 解锁</span><br><span class="line">del lockname</span><br><span class="line"># 这里为了保证删除的是自己的锁，以及保证执行为原子性，使用lua脚本来完成解锁</span><br></pre></td></tr></tbody></table></figure>
-
-<h2 id="hash"><a href="#hash" class="headerlink" title="hash"></a>hash</h2><h3 id="对象存储"><a href="#对象存储" class="headerlink" title="对象存储"></a>对象存储</h3><figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// java对象</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span></span>{</span><br><span class="line">  <span class="keyword">private</span> Integer id;</span><br><span class="line">  <span class="keyword">private</span> String username;</span><br><span class="line">  <span class="keyword">private</span> Integer age;</span><br><span class="line">}</span><br><span class="line"><span class="comment">// id = 1</span></span><br><span class="line"><span class="comment">// username = 'zhangsan'</span></span><br><span class="line"><span class="comment">// age = 19</span></span><br></pre></td></tr></tbody></table></figure>
-
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">hmset user {userId}:name zhangsan {userId}:age 19</span><br><span class="line">hmset user 1:name zhangsan 1:age 19</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="购物车"><a href="#购物车" class="headerlink" title="购物车"></a>购物车</h3><p><img src="https://gitee.com/kexiquan/picture/raw/master/uPic/image-20201125165953548.png" alt="image-20201125165953548"></p>
-<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Cart</span></span>{</span><br><span class="line">  Integer cartId;</span><br><span class="line">  String field;</span><br><span class="line">  Integer count;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"># 添加商品</span><br><span class="line">hset cart:1001 10008 1</span><br><span class="line"># 添加数量</span><br><span class="line">hincrby cart:1001 10008 1</span><br><span class="line"># 删除数量</span><br><span class="line">hincrby cart:1001 10008 -1</span><br><span class="line"># 删除商品</span><br><span class="line">hdel cart:1001 10008</span><br><span class="line"># 获取购物车所有的商品</span><br><span class="line">hgetall cart:1001</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="hash和string对比"><a href="#hash和string对比" class="headerlink" title="hash和string对比"></a>hash和string对比</h3><table>
-<thead>
-<tr>
-<th>优点</th>
-<th>缺点</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>同类数据归档整合存储，方便数据管理 \n 相比string操作消耗内存与cpu更小 \n 相比string存储更节省空间</td>
-<td>过期功能不能使用在field上，只能使用在key上 \n redis集群架构下不适合大规模使用</td>
-</tr>
-</tbody></table>
-<h2 id="list"><a href="#list" class="headerlink" title="list"></a>list</h2><h3 id="常用的数据结构"><a href="#常用的数据结构" class="headerlink" title="常用的数据结构"></a>常用的数据结构</h3><ul>
-<li>stack = lpush+lpop</li>
-<li>queue = lpush + rpop</li>
-<li>blocking mq = lpush + brpop</li>
-</ul>
-<h2 id="set"><a href="#set" class="headerlink" title="set"></a>set</h2><h3 id="抽奖"><a href="#抽奖" class="headerlink" title="抽奖"></a>抽奖</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"># 参加抽奖</span><br><span class="line">sadd key {userId}</span><br><span class="line"># 查看所有的抽奖者</span><br><span class="line">smembers key</span><br><span class="line"># 抽取count名中奖者</span><br><span class="line">srandmember key count # 抽完还有人数不变</span><br><span class="line">spop key count # 抽完人数减少</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="点赞-收藏-标签"><a href="#点赞-收藏-标签" class="headerlink" title="点赞/收藏/标签"></a>点赞/收藏/标签</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"># 点赞</span><br><span class="line">SADD  like:{消息ID}  {用户ID}</span><br><span class="line"># 取消点赞</span><br><span class="line">SREM like:{消息ID}  {用户ID}</span><br><span class="line"># 检查用户是否点过赞</span><br><span class="line">SISMEMBER  like:{消息ID}  {用户ID}</span><br><span class="line"># 获取点赞的用户列表</span><br><span class="line">SMEMBERS like:{消息ID}</span><br><span class="line"># 获取点赞用户数 </span><br><span class="line">SCARD like:{消息ID}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="集合操作"><a href="#集合操作" class="headerlink" title="集合操作"></a>集合操作</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">sadd set1 1 2 3</span><br><span class="line">sadd set2 2 3 4</span><br><span class="line">sadd set3 3 4 5</span><br><span class="line"># 交集</span><br><span class="line">sinter set1 set2 set3 # 结果：{3}</span><br><span class="line"># 并集</span><br><span class="line">sunion set1 set2 set3 # 结果：{1 2 3 4 5}</span><br><span class="line"># 差集</span><br><span class="line">sdiff set1 set2 set3 # 结果：{1}</span><br></pre></td></tr></tbody></table></figure>
-
-
-
-<h2 id="zset"><a href="#zset" class="headerlink" title="zset"></a>zset</h2><h3 id="动漫排行版"><a href="#动漫排行版" class="headerlink" title="动漫排行版"></a>动漫排行版</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"># 点击电影</span><br><span class="line">zincrby film:20201125 1 博人传</span><br><span class="line"># 展示日排行前10</span><br><span class="line">zrevrange film;20201125 0 9 WITHSCORES</span><br><span class="line"># 一周内搜索榜单计算</span><br><span class="line">ZUNIONSTORE  film:20201120-20201127  7 </span><br><span class="line"># 展示一周内排行前十</span><br><span class="line">ZREVRANGE film:20201120-20201127  0  9  WITHSCORES</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
-
-]]></content>
-      <categories>
-        <category>Redis</category>
-      </categories>
-      <tags>
-        <tag>应用</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Redis持久化机制</title>
-    <url>/2020/11/26/redis-chi-jiu-hua-ji-zhi/</url>
-    <content><![CDATA[<h1 id="Redis持久化机制"><a href="#Redis持久化机制" class="headerlink" title="Redis持久化机制"></a>Redis持久化机制</h1><p>Redis是基于内存的key-value数据库，主要将内存中的数据存储到磁盘中，便于数据的恢复和备份，Redis的持久化方式有两种，分别为RDB快照和AOF两种持久化方式</p>
-<h1 id="RDB快照（snapshot）"><a href="#RDB快照（snapshot）" class="headerlink" title="RDB快照（snapshot）"></a>RDB快照（snapshot）</h1><p>在默认情况下， Redis 将内存数据库快照保存在名字为 dump.rdb 的二进制文件中。</p>
-<p>你可以对 Redis 进行设置， 让它在“ N 秒内数据集至少有 M 个改动”这一条件被满足时， 自动保存一次数据集。</p>
-<ul>
-<li>开启或关闭rdb</li>
-</ul>
-<p>比如说， 以下设置会让 Redis 在满足“ 60 秒内有至少有 1000 个键被改动”这一条件时， 自动保存一次数据集：</p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"># save 60 1000    //关闭RDB只需要将所有的save保存策略注释掉即可</span><br></pre></td></tr></tbody></table></figure>
-
-<p>还可以手动执行命令生成RDB快照，进入redis客户端执行命令<strong>save</strong>或<strong>bgsave</strong>可以生成dump.rdb文件，每次命令执行都会将所有redis内存快照到一个新的rdb文件里，并覆盖原有rdb快照文件。</p>
-<p>以下是dump.rdb的内容</p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">[root@redis-base redis]# cat dump.rdb </span><br><span class="line">REDIS0009�      redis-ver5.0.3�</span><br><span class="line">redis-bits�@�ctime�_used-mem�hi</span><br><span class="line">                                �</span><br><span class="line">                                 aof-preamble���</span><br><span class="line">ke3�set3edckehello</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
-
-
-
-<ul>
-<li>bgsave的写时复制(COW)机制</li>
-</ul>
-<p>Redis 借助操作系统提供的写时复制技术（Copy-On-Write, COW），在生成快照的同时，依然可以正常处理写命令。简单来说，bgsave 子进程是由主线程 fork 生成的，可以共享主线程的所有内存数据。bgsave 子进程运行后，开始读取主线程的内存数据，并把它们写入 RDB 文件。此时，如果主线程对这些数据也都是读操作，那么，主线程和 bgsave 子进程相互不影响。但是，如果主线程要修改一块数据，那么，这块数据就会被复制一份，生成该数据的副本。然后，bgsave 子进程会把这个副本数据写入 RDB 文件，而在这个过程中，主线程仍然可以直接修改原来的数据。</p>
-<ul>
-<li>save与bgsave对比：</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>命令</th>
-<th>save</th>
-<th>bgsave</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>IO类型</td>
-<td>同步</td>
-<td>异步</td>
-</tr>
-<tr>
-<td>是否阻塞redis其他命令</td>
-<td>是</td>
-<td>否(在生成子进程执行调用fork函数时会有短暂阻塞)</td>
-</tr>
-<tr>
-<td>复杂度</td>
-<td>O（n）</td>
-<td>O（n）</td>
-</tr>
-<tr>
-<td>优点</td>
-<td>不会消耗额外的内存</td>
-<td>不会阻塞客户端命令</td>
-</tr>
-<tr>
-<td>缺点</td>
-<td>阻塞客户端命令</td>
-<td>需要fork子进程，消耗内存</td>
-</tr>
-</tbody></table>
-<h1 id="AOF（append-only-file）"><a href="#AOF（append-only-file）" class="headerlink" title="AOF（append-only file）"></a>AOF（append-only file）</h1><ul>
-<li>开启aof</li>
-</ul>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">appendonly yes</span><br></pre></td></tr></tbody></table></figure>
-
-<ul>
-<li>重启redis服务端</li>
-</ul>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">src/redis-cli shutdown</span><br><span class="line">src/redis-server redis.conf</span><br></pre></td></tr></tbody></table></figure>
-
-<ul>
-<li>测试</li>
-</ul>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"># 在redis-cli执行一下命令</span><br><span class="line">set hello 112</span><br><span class="line"># 在appendonly.aof写入对应的内容为</span><br><span class="line">*3</span><br><span class="line">$3</span><br><span class="line">set</span><br><span class="line">$5</span><br><span class="line">hello</span><br><span class="line">$3</span><br><span class="line">112</span><br></pre></td></tr></tbody></table></figure>
-
-<ul>
-<li>追加到appendonly.aof的模式又三种</li>
-</ul>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">appendfsync always：每次有新命令追加到 AOF 文件时就执行一次&nbsp;fsync&nbsp;，非常慢，也非常安全。</span><br><span class="line">appendfsync everysec：每秒&nbsp;fsync&nbsp;一次，足够快，并且在故障时只会丢失 1 秒钟的数据。</span><br><span class="line">appendfsync no：从不&nbsp;fsync&nbsp;，将数据交给操作系统来处理。更快，也更不安全的选择。</span><br></pre></td></tr></tbody></table></figure>
-
-<p>redis默认使用everysec，推荐（并且也是默认）的措施为每秒 fsync 一次， 这种 fsync 策略可以兼顾速度和安全性。</p>
-<ul>
-<li>AOF重写命令</li>
-</ul>
-<p>Redis会定期对aof文件中的命令进行优化，在恢复数据时，可以减少没有用的命令的执行，例如：</p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">127.0.0.1:6379&gt; incr count</span><br><span class="line">(integer) 1</span><br><span class="line">127.0.0.1:6379&gt; incr count</span><br><span class="line">(integer) 2</span><br><span class="line">127.0.0.1:6379&gt; incr count</span><br><span class="line">(integer) 3</span><br><span class="line">127.0.0.1:6379&gt; incr count</span><br><span class="line">(integer) 4</span><br><span class="line">127.0.0.1:6379&gt; incr count</span><br><span class="line">(integer) 5</span><br><span class="line">127.0.0.1:6379&gt; incr count</span><br><span class="line">(integer) 6</span><br><span class="line">127.0.0.1:6379&gt; incr count</span><br><span class="line">(integer) 7</span><br><span class="line">127.0.0.1:6379&gt; incr count</span><br><span class="line">(integer) 8</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
-
-<p>优化前的aof中文件的内容</p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">*2</span><br><span class="line">$4</span><br><span class="line">incr</span><br><span class="line">$5</span><br><span class="line">count</span><br><span class="line">*2</span><br><span class="line">$4</span><br><span class="line">incr</span><br><span class="line">$5</span><br><span class="line">count</span><br><span class="line">*2</span><br><span class="line">$4</span><br><span class="line">incr</span><br><span class="line">$5</span><br><span class="line">count</span><br><span class="line">*2</span><br><span class="line">$4</span><br><span class="line">incr</span><br><span class="line">$5</span><br><span class="line">count</span><br><span class="line">*2</span><br><span class="line">$4</span><br><span class="line">incr</span><br><span class="line">$5</span><br><span class="line">count</span><br><span class="line">*2</span><br><span class="line">$4</span><br><span class="line">incr</span><br><span class="line">$5</span><br><span class="line">count</span><br><span class="line">*2</span><br><span class="line">$4</span><br><span class="line">incr</span><br><span class="line">$5</span><br><span class="line">count</span><br><span class="line">*2</span><br><span class="line">$4</span><br><span class="line">incr</span><br><span class="line">$5</span><br><span class="line">count</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
-
-<p>手动执行aof重写<strong>bgrewriteaof</strong></p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">*3</span><br><span class="line">$3</span><br><span class="line">set</span><br><span class="line">$5</span><br><span class="line">count</span><br><span class="line">$3</span><br><span class="line">5</span><br></pre></td></tr></tbody></table></figure>
-
-<ul>
-<li>配置aof自动重写评率</li>
-</ul>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"># auto-aof-rewrite-min-size 64mb   //aof文件至少要达到64M才会自动重写，文件太小恢复速度本来就很快，重写的意义不大</span><br><span class="line"># auto-aof-rewrite-percentage 100  //aof文件自上一次重写后文件大小增长了100%则再次触发重写</span><br></pre></td></tr></tbody></table></figure>
-
-<h1 id="rdb和aof的区别"><a href="#rdb和aof的区别" class="headerlink" title="rdb和aof的区别"></a>rdb和aof的区别</h1><table>
-<thead>
-<tr>
-<th>命令</th>
-<th>rdb</th>
-<th>aof</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>启动优先级</td>
-<td>低</td>
-<td>高</td>
-</tr>
-<tr>
-<td>文件大小</td>
-<td>小</td>
-<td>大</td>
-</tr>
-<tr>
-<td>恢复数据的速度</td>
-<td>快</td>
-<td>慢</td>
-</tr>
-<tr>
-<td>数据安全</td>
-<td>容易丢失</td>
-<td>根据策略决定</td>
-</tr>
-</tbody></table>
-<p>生产环境可以都启用，redis启动时如果既有rdb文件又有aof文件则优先选择aof文件恢复数据，因为aof一般来说数据更全一点。</p>
-<h1 id="Redis-4-0-混合持久化"><a href="#Redis-4-0-混合持久化" class="headerlink" title="Redis 4.0 混合持久化"></a>Redis 4.0 混合持久化</h1><p> 重启 Redis 时，我们很少使用 RDB来恢复内存状态，因为会丢失大量数据。我们通常使用 AOF 日志重放，但是重放 AOF 日志性能相对 RDB来说要慢很多，这样在 Redis 实例很大的情况下，启动需要花费很长的时间。 Redis 4.0 为了解决这个问题，带来了一个新的持久化选项——混合持久化。</p>
-<p>通过如下配置可以开启混合持久化(<strong>必须先开启aof</strong>)：</p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">aof-use-rdb-preamble yes  </span><br></pre></td></tr></tbody></table></figure>
-
-<p>如果开启了混合持久化，<strong>AOF在重写时</strong>，不再是单纯将内存数据转换为RESP命令写入AOF文件，而是将重写<strong>这一刻之前</strong>的内存做RDB快照处理，并且将RDB快照内容和<strong>增量的</strong>AOF修改内存数据的命令存在一起，都写入新的AOF文件，新的文件一开始不叫appendonly.aof，等到重写完新的AOF文件才会进行改名，覆盖原有的AOF文件，完成新旧两个AOF文件的替换。</p>
-<p>于是在 Redis 重启的时候，可以先加载 RDB 的内容，然后再重放增量 AOF 日志就可以完全替代之前的 AOF 全量文件重放，因此重启效率大幅得到提升。</p>
-<p>混合持久化AOF文件结构如下:</p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">REDIS0009�      redis-ver5.0.3�</span><br><span class="line">�edis-bits�@�ctime��,�_used-mem</span><br><span class="line"> aof-preamble��kexiquan�counthello�p��=�c�u|�*2</span><br><span class="line"># 以上是rdb快照，以下是aof模式</span><br><span class="line">$6</span><br><span class="line">SELECT</span><br><span class="line">$1</span><br><span class="line">0</span><br><span class="line">*3</span><br><span class="line">$3</span><br><span class="line">set</span><br><span class="line">$3</span><br><span class="line">kxq</span><br><span class="line">$10</span><br><span class="line">kezhuoquan</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
-
-]]></content>
-      <categories>
-        <category>Redis</category>
-      </categories>
-      <tags>
-        <tag>持久化</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Redis Template的使用</title>
     <url>/2020/11/27/redis/redis-template-de-shi-yong/</url>
     <content><![CDATA[<h1 id="导入依赖pom"><a href="#导入依赖pom" class="headerlink" title="导入依赖pom"></a>导入依赖pom</h1><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">   &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">   &lt;artifactId&gt;spring-boot-starter-data-redis&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">   &lt;groupId&gt;org.apache.commons&lt;/groupId&gt;</span><br><span class="line">   &lt;artifactId&gt;commons-pool2&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></tbody></table></figure>
 
 <h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">spring:</span><br><span class="line">  redis:</span><br><span class="line">    database: 0</span><br><span class="line">    timeout: 3000</span><br><span class="line">    # 哨兵模式</span><br><span class="line">    # sentinel: </span><br><span class="line">      #主服务器所在集群名称</span><br><span class="line">      # master: mymaster </span><br><span class="line">      # nodes: 172.16.233.130:26379,172.16.233.130:26380,172.16.233.130:26381</span><br><span class="line">   lettuce:</span><br><span class="line">      pool:</span><br><span class="line">        max-idle: 50</span><br><span class="line">        min-idle: 10</span><br><span class="line">        max-active: 100</span><br><span class="line">        max-wait: 1000</span><br></pre></td></tr></tbody></table></figure>
 
-<h1 id="测试代码"><a href="#测试代码" class="headerlink" title="测试代码"></a>测试代码</h1><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">@RestController</span><br><span class="line">public class IndexController {</span><br><span class="line"></span><br><span class="line">    private static final Logger logger = LoggerFactory.getLogger(IndexController.class);</span><br><span class="line"></span><br><span class="line">    @Autowired</span><br><span class="line">    private StringRedisTemplate stringRedisTemplate;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * @throws InterruptedException</span><br><span class="line">     */</span><br><span class="line">    @RequestMapping("/test_sentinel")</span><br><span class="line">    public void testSentinel() throws InterruptedException {</span><br><span class="line">        int i = 1;</span><br><span class="line">        while (true){</span><br><span class="line">             stringRedisTemplate.opsForValue().set("zhuge"+i, i+"");</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h1 id="测试代码"><a href="#测试代码" class="headerlink" title="测试代码"></a>测试代码</h1><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">@RestController</span><br><span class="line">public class IndexController {</span><br><span class="line"></span><br><span class="line">    private static final Logger logger = LoggerFactory.getLogger(IndexController.class);</span><br><span class="line"></span><br><span class="line">    @Autowired</span><br><span class="line">    private StringRedisTemplate stringRedisTemplate;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    @RequestMapping("/test_sentinel")</span><br><span class="line">    public void testSentinel(){</span><br><span class="line">        int i = 1;</span><br><span class="line">        while (true){</span><br><span class="line">             stringRedisTemplate.opsForValue().set("ke"+i, i+"");</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
 <h1 id="StringRedisTemplate与RedisTemplate详解"><a href="#StringRedisTemplate与RedisTemplate详解" class="headerlink" title="StringRedisTemplate与RedisTemplate详解"></a>StringRedisTemplate与RedisTemplate详解</h1><p>spring 封装了 RedisTemplate 对象来进行对redis的各种操作，它支持所有的 redis 原生的 api。在RedisTemplate中提供了几个常用的接口方法的使用，分别是:</p>
 <figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line">redisTemplate.opsForValue();<span class="comment">//操作字符串</span></span><br><span class="line">redisTemplate.opsForHash();<span class="comment">//操作hash</span></span><br><span class="line">redisTemplate.opsForList();<span class="comment">//操作list</span></span><br><span class="line">redisTemplate.opsForSet();<span class="comment">//操作set</span></span><br><span class="line">redisTemplate.opsForZSet();<span class="comment">//操作有序set          </span></span><br></pre></td></tr></tbody></table></figure>
@@ -874,6 +241,781 @@
       </categories>
       <tags>
         <tag>SpringBoot</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CentOS安装docker</title>
+    <url>/2020/11/24/docker/centos-an-zhuang-docker/</url>
+    <content><![CDATA[<h1 id="卸载旧版本（以前没有安装过可跳过）"><a href="#卸载旧版本（以前没有安装过可跳过）" class="headerlink" title="卸载旧版本（以前没有安装过可跳过）"></a>卸载旧版本（以前没有安装过可跳过）</h1><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">yum remove docker \</span><br><span class="line">                  docker-client \</span><br><span class="line">                  docker-client-latest \</span><br><span class="line">                  docker-common \</span><br><span class="line">                  docker-latest \</span><br><span class="line">                  docker-latest-logrotate \</span><br><span class="line">                  docker-logrotate \</span><br><span class="line">                  docker-engine</span><br></pre></td></tr></tbody></table></figure>
+
+<h1 id="更新yum包到最新-生产环境尽量不要使用"><a href="#更新yum包到最新-生产环境尽量不要使用" class="headerlink" title="更新yum包到最新(生产环境尽量不要使用)"></a>更新yum包到最新(生产环境尽量不要使用)</h1><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">yum update</span><br></pre></td></tr></tbody></table></figure>
+
+<h1 id="安装docker依赖包"><a href="#安装docker依赖包" class="headerlink" title="安装docker依赖包"></a>安装docker依赖包</h1><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">yum install -y yum-utils device-mapper-persistent-data lvm2</span><br></pre></td></tr></tbody></table></figure>
+
+<h1 id="设置yum源"><a href="#设置yum源" class="headerlink" title="设置yum源"></a>设置yum源</h1><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo</span><br></pre></td></tr></tbody></table></figure>
+
+<h1 id="查看所有仓库的docker版本"><a href="#查看所有仓库的docker版本" class="headerlink" title="查看所有仓库的docker版本"></a>查看所有仓库的docker版本</h1><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">yum list docker-ce --showduplicates | sort -r</span><br><span class="line">已加载插件：fastestmirror</span><br><span class="line">可安装的软件包</span><br><span class="line"> * updates: mirrors.aliyun.com</span><br><span class="line">Loading mirror speeds from cached hostfile</span><br><span class="line"> * extras: mirrors.aliyun.com</span><br><span class="line">docker-ce.x86_64            3:19.03.9-3.el7                     docker-ce-stable</span><br><span class="line">docker-ce.x86_64            3:19.03.8-3.el7                     docker-ce-stable</span><br><span class="line">docker-ce.x86_64            3:19.03.7-3.el7                     docker-ce-stable</span><br><span class="line">docker-ce.x86_64            3:19.03.6-3.el7                     docker-ce-stable</span><br><span class="line">docker-ce.x86_64            3:19.03.5-3.el7                     docker-ce-stable</span><br><span class="line">docker-ce.x86_64            3:19.03.4-3.el7                     docker-ce-stable</span><br><span class="line">docker-ce.x86_64            3:19.03.3-3.el7                     docker-ce-stable</span><br><span class="line">docker-ce.x86_64            3:19.03.2-3.el7                     docker-ce-stable</span><br><span class="line">docker-ce.x86_64            3:19.03.1-3.el7                     docker-ce-stable</span><br><span class="line">docker-ce.x86_64            3:19.03.13-3.el7                    docker-ce-stable</span><br><span class="line">...</span><br></pre></td></tr></tbody></table></figure>
+
+<h1 id="指定版本安装，我这里用的是docker-ce-18-06-3-ce"><a href="#指定版本安装，我这里用的是docker-ce-18-06-3-ce" class="headerlink" title="指定版本安装，我这里用的是docker-ce-18.06.3.ce"></a>指定版本安装，我这里用的是docker-ce-18.06.3.ce</h1><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">yum install docker-ce-18.06.3.ce</span><br></pre></td></tr></tbody></table></figure>
+
+<h1 id="启动docker"><a href="#启动docker" class="headerlink" title="启动docker"></a>启动docker</h1><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">[root@docker-base yum.repos.d]# systemctl start docker</span><br><span class="line">[root@docker-base yum.repos.d]# systemctl enable docker</span><br><span class="line">Created symlink from /etc/systemd/system/multi-user.target.wants/docker.service to /usr/lib/systemd/system/docker.service.</span><br></pre></td></tr></tbody></table></figure>
+
+<h1 id="验证安装是否成功"><a href="#验证安装是否成功" class="headerlink" title="验证安装是否成功"></a>验证安装是否成功</h1><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">[root@docker-base yum.repos.d]# docker version</span><br><span class="line">Client:</span><br><span class="line"> Version:           18.06.3-ce</span><br><span class="line"> API version:       1.38</span><br><span class="line"> Go version:        go1.10.3</span><br><span class="line"> Git commit:        d7080c1</span><br><span class="line"> Built:             Wed Feb 20 02:26:51 2019</span><br><span class="line"> OS/Arch:           linux/amd64</span><br><span class="line"> Experimental:      false</span><br><span class="line"></span><br><span class="line">Server:</span><br><span class="line"> Engine:</span><br><span class="line">  Version:          18.06.3-ce</span><br><span class="line">  API version:      1.38 (minimum version 1.12)</span><br><span class="line">  Go version:       go1.10.3</span><br><span class="line">  Git commit:       d7080c1</span><br><span class="line">  Built:            Wed Feb 20 02:28:17 2019</span><br><span class="line">  OS/Arch:          linux/amd64</span><br><span class="line">  Experimental:     false</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+<h1 id="更换镜像源加速"><a href="#更换镜像源加速" class="headerlink" title="更换镜像源加速"></a>更换镜像源加速</h1><figure class="highlight json"><table><tbody><tr><td class="code"><pre><span class="line">vi /etc/docker/daemon.json</span><br><span class="line"># 内容</span><br><span class="line">{</span><br><span class="line">  <span class="attr">"registry-mirrors"</span> : [</span><br><span class="line">    <span class="string">"http://hub-mirror.c.163.com"</span>,</span><br><span class="line">    <span class="string">"https://registry.docker-cn.com"</span>,</span><br><span class="line">    <span class="string">"https://docker.mirrors.ustc.edu.cn"</span></span><br><span class="line">  ],</span><br><span class="line">  <span class="attr">"insecure-registries"</span> : [</span><br><span class="line">    <span class="string">"registry.docker-cn.com"</span>,</span><br><span class="line">    <span class="string">"docker.mirrors.ustc.edu.cn"</span></span><br><span class="line">  ],</span><br><span class="line">  <span class="attr">"debug"</span> : <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">"experimental"</span> : <span class="literal">true</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<h1 id="重启docker服务"><a href="#重启docker服务" class="headerlink" title="重启docker服务"></a>重启docker服务</h1><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">systemctl restart docker</span><br></pre></td></tr></tbody></table></figure>
+
+<h1 id="运行第一个容器hello-world"><a href="#运行第一个容器hello-world" class="headerlink" title="运行第一个容器hello-world"></a>运行第一个容器hello-world</h1><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">[root@docker-base yum.repos.d]# docker run hello-world</span><br><span class="line">Unable to find image 'hello-world:latest' locally</span><br><span class="line">latest: Pulling from library/hello-world</span><br><span class="line">0e03bdcc26d7: Pull complete </span><br><span class="line">Digest: sha256:e7c70bb24b462baa86c102610182e3efcb12a04854e8c582838d92970a09f323</span><br><span class="line">Status: Downloaded newer image for hello-world:latest</span><br><span class="line"></span><br><span class="line">Hello from Docker!</span><br></pre></td></tr></tbody></table></figure>
+
+]]></content>
+      <categories>
+        <category>容器</category>
+      </categories>
+      <tags>
+        <tag>Docker</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Fusion安装centos</title>
+    <url>/2020/11/24/linux/fusion-an-zhuang-centos/</url>
+    <content><![CDATA[<h1 id="CentOS镜像"><a href="#CentOS镜像" class="headerlink" title="CentOS镜像"></a>CentOS镜像</h1><p><a href="https://mirrors.huaweicloud.com/centos/7.9.2009/isos/x86_64/CentOS-7-x86_64-Minimal-2009.iso">CentOS7</a></p>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><h2 id="将下载好的镜像拖放到图中的位置"><a href="#将下载好的镜像拖放到图中的位置" class="headerlink" title="将下载好的镜像拖放到图中的位置"></a>将下载好的镜像拖放到图中的位置</h2><p><img src="https://gitee.com/kexiquan/picture/raw/master/uPic/image-20201124201941346.png" alt="image-20201124201941346"></p>
+<h2 id="点击继续"><a href="#点击继续" class="headerlink" title="点击继续"></a>点击继续</h2><p><img src="https://gitee.com/kexiquan/picture/raw/master/uPic/image-20201124202043894.png" alt="image-20201124202043894"></p>
+<h2 id="点击传统bios，继续"><a href="#点击传统bios，继续" class="headerlink" title="点击传统bios，继续"></a>点击传统bios，继续</h2><p><img src="https://gitee.com/kexiquan/picture/raw/master/uPic/image-20201124202105777.png" alt="image-20201124202105777"></p>
+<h2 id="自己重命名，存储"><a href="#自己重命名，存储" class="headerlink" title="自己重命名，存储"></a>自己重命名，存储</h2><p><img src="https://gitee.com/kexiquan/picture/raw/master/uPic/image-20201124202134475.png" alt="image-20201124202134475"></p>
+<h2 id="点击三角符号"><a href="#点击三角符号" class="headerlink" title="点击三角符号"></a>点击三角符号</h2><p><img src="https://gitee.com/kexiquan/picture/raw/master/uPic/image-20201124202151862.png" alt="image-20201124202151862"></p>
+<h2 id="鼠标点进，将光标移到install-CentOS7"><a href="#鼠标点进，将光标移到install-CentOS7" class="headerlink" title="鼠标点进，将光标移到install CentOS7"></a>鼠标点进，将光标移到install CentOS7</h2><p><img src="https://gitee.com/kexiquan/picture/raw/master/uPic/image-20201124202203915.png" alt="image-20201124202203915"></p>
+<h2 id="等待"><a href="#等待" class="headerlink" title="等待"></a>等待</h2><p><img src="https://gitee.com/kexiquan/picture/raw/master/uPic/image-20201124202216630.png" alt="image-20201124202216630"></p>
+<h2 id="选择语言，继续"><a href="#选择语言，继续" class="headerlink" title="选择语言，继续"></a>选择语言，继续</h2><p><img src="https://gitee.com/kexiquan/picture/raw/master/uPic/image-20201124202250016.png" alt="image-20201124202250016"></p>
+<h2 id="选择安装位置"><a href="#选择安装位置" class="headerlink" title="选择安装位置"></a>选择安装位置</h2><p><img src="https://gitee.com/kexiquan/picture/raw/master/uPic/image-20201124202321010.png" alt="image-20201124202321010"></p>
+<h2 id="选择分配好的磁盘，完成"><a href="#选择分配好的磁盘，完成" class="headerlink" title="选择分配好的磁盘，完成"></a>选择分配好的磁盘，完成</h2><p><img src="https://gitee.com/kexiquan/picture/raw/master/uPic/image-20201124202339039.png" alt="image-20201124202339039"></p>
+<h2 id="开始安装"><a href="#开始安装" class="headerlink" title="开始安装"></a>开始安装</h2><p><img src="https://gitee.com/kexiquan/picture/raw/master/uPic/image-20201124202349948.png" alt="image-20201124202349948"></p>
+<h2 id="设置Root密码，也可以创建用户，建议只是学习，可以不创建用户，直接使用root"><a href="#设置Root密码，也可以创建用户，建议只是学习，可以不创建用户，直接使用root" class="headerlink" title="设置Root密码，也可以创建用户，建议只是学习，可以不创建用户，直接使用root"></a>设置Root密码，也可以创建用户，建议只是学习，可以不创建用户，直接使用root</h2><p><img src="https://gitee.com/kexiquan/picture/raw/master/uPic/image-20201124202454418.png" alt="image-20201124202454418"></p>
+<p><img src="https://gitee.com/kexiquan/picture/raw/master/uPic/image-20201124202429903.png" alt="image-20201124202429903"></p>
+<h2 id="重启"><a href="#重启" class="headerlink" title="重启"></a>重启</h2><p><img src="https://gitee.com/kexiquan/picture/raw/master/uPic/image-20201124203240424.png" alt="image-20201124203240424"></p>
+<h1 id="设置静态ip"><a href="#设置静态ip" class="headerlink" title="设置静态ip"></a>设置静态ip</h1><h2 id="查看fusion的网关，子网掩码"><a href="#查看fusion的网关，子网掩码" class="headerlink" title="查看fusion的网关，子网掩码"></a>查看fusion的网关，子网掩码</h2><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">vim  /Library/Preferences/VMware\ Fusion/vmnet8/nat.conf </span><br></pre></td></tr></tbody></table></figure>
+
+<p><img src="https://gitee.com/kexiquan/picture/raw/master/uPic/image-20201124204207363.png" alt="image-20201124204207363"></p>
+<h2 id="到虚拟机里修改网络配置文件"><a href="#到虚拟机里修改网络配置文件" class="headerlink" title="到虚拟机里修改网络配置文件"></a>到虚拟机里修改网络配置文件</h2><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">vi /etc/sysconfig/network-scripts/ifcfg-ens33</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">TYPE=Ethernet</span><br><span class="line">PROXY_METHOD=none</span><br><span class="line">BROWSER_ONLY=no</span><br><span class="line"># BOOTPROTO=dhcp # 关闭自动分配</span><br><span class="line">DEFROUTE=yes</span><br><span class="line">IPV4_FAILURE_FATAL=no</span><br><span class="line">IPV6INIT=yes</span><br><span class="line">IPV6_AUTOCONF=yes</span><br><span class="line">IPV6_DEFROUTE=yes</span><br><span class="line">IPV6_FAILURE_FATAL=no</span><br><span class="line"># IPV6_ADDR_GEN_MODE=stable-privacy</span><br><span class="line">NAME=ens33</span><br><span class="line">UUID=360a8364-ce02-4141-88cd-6b77539e9bde</span><br><span class="line">DEVICE=ens33</span><br><span class="line"># ONBOOT=no</span><br><span class="line"># 添加的内容</span><br><span class="line">BOOTPROTO=static</span><br><span class="line">ONBOOT=yes</span><br><span class="line">IPADDR=172.16.233.129</span><br><span class="line">GATEWAY=172.16.233.1</span><br><span class="line">NETMASK=255.255.255.0</span><br><span class="line">DNS1=192.168.0.1</span><br><span class="line">DNS2=114.114.114.114</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="退出，重启网络服务"><a href="#退出，重启网络服务" class="headerlink" title="退出，重启网络服务"></a>退出，重启网络服务</h2><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">systemctl restart network</span><br></pre></td></tr></tbody></table></figure>
+
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>安装系统</tag>
+        <tag>CentOS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>SpringBoot定时任务</title>
+    <url>/2020/11/14/springboot/springboot-ding-shi-ren-wu/</url>
+    <content><![CDATA[<h1 id="SpringBoot定时任务"><a href="#SpringBoot定时任务" class="headerlink" title="SpringBoot定时任务"></a>SpringBoot定时任务</h1><p>SpringBoot创建定时任务的方式：</p>
+<ul>
+<li>基于注解（@Scheduled）</li>
+<li>基于接口（SchedulingConfigurer）</li>
+<li>基于注解设定多线程定时任务</li>
+</ul>
+<h1 id="静态：基于注解"><a href="#静态：基于注解" class="headerlink" title="静态：基于注解"></a>静态：基于注解</h1><p>在SpringBoot中，使用@Scheduled创建定时任务，代码如下：</p>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@EnableScheduling</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StaticScheduledTask</span> </span>{</span><br><span class="line">    <span class="meta">@Scheduled(cron = "0/5 * * * * ?")</span></span><br><span class="line">    <span class="comment">//@Scheduled(fixedRate = 5000)</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">configureTasks</span><span class="params">()</span></span>{</span><br><span class="line">        System.out.println(<span class="string">"执行定时任务，当前时间为："</span>+ LocalDateTime.now());</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<ul>
+<li><p>@Configuration: 配置类</p>
+</li>
+<li><p>@EnableScheduling：开启定时任务</p>
+</li>
+<li><p>@Scheduled的cron表达式解释：一个cron表达式有至少6个（也可能7个）有空格分隔的时间元素，顺序依次为：秒，分，小时，天，月，星期，年份</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>/</td>
+<td>3/5 * * * * * ?：表示从第五秒开始，每五秒执行一次</td>
+</tr>
+<tr>
+<td>，</td>
+<td>0 0 9,6 * * ? ：早九晚六</td>
+</tr>
+<tr>
+<td>?</td>
+<td>仅作用于天和星期上，表示不指定值</td>
+</tr>
+<tr>
+<td>L</td>
+<td>当只有L这个符号，表示最后，0 0 L * * ?，表示24小时中的23:00:00，0 0 3L * * ?表示20:00:00</td>
+</tr>
+<tr>
+<td>*</td>
+<td>* 有每个的意思，0 0 0 0 * ？：表示 表示每个月的第一天00:00:00</td>
+</tr>
+<tr>
+<td>#</td>
+<td>是用来指定“的”每月第n个工作日,例 在每周（day-of-week）这个字段中内容为”6#3” or “FRI#3” 则表示“每月第三个星期五”；</td>
+</tr>
+<tr>
+<td>W</td>
+<td>表示为最近工作日，如“15W”放在每月（day-of-month）字段上表示为“到本月15日最近的工作日”；</td>
+</tr>
+</tbody></table>
+<ul>
+<li>每个字段的允许值以及允许符号</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>允许值</th>
+<th>符号</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>秒</td>
+<td>0-59</td>
+<td>，- */</td>
+</tr>
+<tr>
+<td>分</td>
+<td>0-59</td>
+<td>，-*/</td>
+</tr>
+<tr>
+<td>时</td>
+<td>0-23</td>
+<td>，-*/</td>
+</tr>
+<tr>
+<td>日</td>
+<td>1-31</td>
+<td>，-*？/LWC</td>
+</tr>
+<tr>
+<td>月份</td>
+<td>1-12或者JAN-DEC</td>
+<td>，-*/</td>
+</tr>
+<tr>
+<td>星期</td>
+<td>1-7或者SUM-SAT</td>
+<td>，-*？/LC#</td>
+</tr>
+<tr>
+<td>年（可选）</td>
+<td>留空，1970-2099</td>
+<td>，-*/</td>
+</tr>
+</tbody></table>
+<h1 id="动态：基于接口"><a href="#动态：基于接口" class="headerlink" title="动态：基于接口"></a>动态：基于接口</h1><p>使用SchedulingConfigurer</p>
+<ul>
+<li>添加已来到pom.xml中</li>
+</ul>
+<figure class="highlight xml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.zaxxer<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>HikariCP<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-jdbc<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">exclusions</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 排除 tomcat-jdbc 以使用 HikariCP --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">exclusion</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.tomcat<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>tomcat-jdbc<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">exclusion</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">exclusions</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>mysql<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mysql-connector-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.mybatis.spring.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis-spting-boot-starter<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.1.3<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+
+<ul>
+<li>创建数据库：</li>
+</ul>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line">CREATE TABLE `cron` (</span><br><span class="line">  `cron_id` varchar(<span class="number">30</span>) COLLATE utf8_bin NOT NULL,</span><br><span class="line">  `cron` varchar(<span class="number">30</span>) COLLATE utf8_bin NOT NULL,</span><br><span class="line">  <span class="function">PRIMARY <span class="title">KEY</span> <span class="params">(`cron_id`)</span></span></span><br><span class="line"><span class="function">) ENGINE</span>=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;</span><br></pre></td></tr></tbody></table></figure>
+
+<ul>
+<li>配置文件</li>
+</ul>
+<figure class="highlight yml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="attr">datasource:</span></span><br><span class="line">    <span class="attr">type:</span> <span class="string">com.zaxxer.hikari.HikariDataSource</span></span><br><span class="line">    <span class="attr">driver-class-name:</span> <span class="string">com.mysql.cj.jdbc.Driver</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">jdbc:mysql://localhost:3306/scheduled?useUnicode=true&amp;characterEncoding=utf-8&amp;useSSL=false</span></span><br><span class="line">    <span class="attr">username:</span> <span class="string">root</span></span><br><span class="line">    <span class="attr">password:</span> <span class="number">13112110947</span></span><br><span class="line">    <span class="attr">hikari:</span></span><br><span class="line">      <span class="attr">minimum-idle:</span> <span class="number">5</span></span><br><span class="line">      <span class="attr">idle-timeout:</span> <span class="number">600000</span></span><br><span class="line">      <span class="attr">maximum-pool-size:</span> <span class="number">10</span></span><br><span class="line">      <span class="attr">auto-commit:</span> <span class="literal">true</span></span><br><span class="line">      <span class="attr">pool-name:</span> <span class="string">MyHikariCP</span></span><br><span class="line">      <span class="attr">max-lifetime:</span> <span class="number">1800000</span></span><br><span class="line">      <span class="attr">connection-timeout:</span> <span class="number">30000</span></span><br><span class="line">      <span class="attr">connection-test-query:</span> <span class="string">SELECT</span> <span class="number">1</span></span><br><span class="line">  <span class="attr">mybatis:</span></span><br><span class="line">    <span class="attr">type-aliases-package:</span> <span class="string">com.kxq.scheduleddemo.domain</span></span><br><span class="line">    <span class="attr">mapper-locations:</span> <span class="string">classpath:mapper/*.xml</span></span><br></pre></td></tr></tbody></table></figure>
+
+<ul>
+<li>domain：</li>
+</ul>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Cron</span> <span class="keyword">implements</span> <span class="title">Serializable</span> </span>{</span><br><span class="line">    <span class="keyword">private</span> String cronId;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String cron;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">long</span> serialVersionUID = <span class="number">1L</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<ul>
+<li>mapper</li>
+</ul>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">@Mapper</span><br><span class="line">public interface CronMapper {</span><br><span class="line">    /**</span><br><span class="line">     * 获取cron表达式</span><br><span class="line">     * @return</span><br><span class="line">     */</span><br><span class="line">    @Select("select cron from cron limit 1")</span><br><span class="line">    String getCron();</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<ul>
+<li>核心代码</li>
+</ul>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@EnableScheduling</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DynamicScheduleTask</span> <span class="keyword">implements</span> <span class="title">SchedulingConfigurer</span> </span>{</span><br><span class="line">    <span class="meta">@Resource</span></span><br><span class="line">    <span class="keyword">private</span> CronMapper cronMapper;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">configureTasks</span><span class="params">(ScheduledTaskRegistrar scheduledTaskRegistrar)</span> </span>{</span><br><span class="line">        scheduledTaskRegistrar.addTriggerTask(</span><br><span class="line">                <span class="comment">// 添加执行任务</span></span><br><span class="line">                ()-&gt; System.out.println(<span class="string">"执行任务的时间为："</span>+ LocalDateTime.now()),</span><br><span class="line">                <span class="comment">// 设置执行周期</span></span><br><span class="line">                triggerContext -&gt; {</span><br><span class="line">                    <span class="comment">//2.1 从数据库获取执行周期</span></span><br><span class="line">                    String cron = cronMapper.getCron();</span><br><span class="line">                    <span class="comment">//2.2 合法性校验.</span></span><br><span class="line">                    <span class="keyword">if</span> (StringUtils.isEmpty(cron)) {</span><br><span class="line">                        <span class="comment">// Omitted Code ..</span></span><br><span class="line">                    }</span><br><span class="line">                    <span class="comment">//2.3 返回执行周期(Date)</span></span><br><span class="line">                    <span class="keyword">return</span> <span class="keyword">new</span> CronTrigger(cron).nextExecutionTime(triggerContext);</span><br><span class="line">                }</span><br><span class="line">        );</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<ul>
+<li>执行结果</li>
+</ul>
+<p><img src="https://gitee.com/kexiquan/picture/raw/master/uPic/image-20201114165212982.png" alt="image-20201114165212982"></p>
+<h1 id="多线程定时任务"><a href="#多线程定时任务" class="headerlink" title="多线程定时任务"></a>多线程定时任务</h1><ul>
+<li>代码</li>
+</ul>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@EnableScheduling</span></span><br><span class="line"><span class="meta">@EnableAsync</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MultiThreadScheduledTask</span> </span>{</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Async</span></span><br><span class="line">    <span class="meta">@Scheduled(fixedDelay = 1000)</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">task1</span><span class="params">()</span></span>{</span><br><span class="line">        System.out.println(<span class="string">"第一个任务的执行时间："</span>+ LocalDateTime.now());</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Async</span></span><br><span class="line">    <span class="meta">@Scheduled(fixedDelay = 2000)</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">task2</span><span class="params">()</span></span>{</span><br><span class="line">        System.out.println(<span class="string">"第二个任务的执行时间："</span>+LocalDateTime.now());</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+
+
+<ul>
+<li>结果</li>
+</ul>
+<p><img src="https://gitee.com/kexiquan/picture/raw/master/uPic/image-20201114170102499.png" alt="image-20201114170102499"></p>
+<p>任务一的执行间隔为1s，任务二的执行间隔为2s</p>
+]]></content>
+      <categories>
+        <category>SpringBoot</category>
+      </categories>
+      <tags>
+        <tag>定时任务</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Redis持久化机制</title>
+    <url>/2020/11/26/redis/redis-chi-jiu-hua-ji-zhi/</url>
+    <content><![CDATA[<h1 id="Redis持久化机制"><a href="#Redis持久化机制" class="headerlink" title="Redis持久化机制"></a>Redis持久化机制</h1><p>Redis是基于内存的key-value数据库，主要将内存中的数据存储到磁盘中，便于数据的恢复和备份，Redis的持久化方式有两种，分别为RDB快照和AOF两种持久化方式</p>
+<h1 id="RDB快照（snapshot）"><a href="#RDB快照（snapshot）" class="headerlink" title="RDB快照（snapshot）"></a>RDB快照（snapshot）</h1><p>在默认情况下， Redis 将内存数据库快照保存在名字为 dump.rdb 的二进制文件中。</p>
+<p>你可以对 Redis 进行设置， 让它在“ N 秒内数据集至少有 M 个改动”这一条件被满足时， 自动保存一次数据集。</p>
+<ul>
+<li>开启或关闭rdb</li>
+</ul>
+<p>比如说， 以下设置会让 Redis 在满足“ 60 秒内有至少有 1000 个键被改动”这一条件时， 自动保存一次数据集：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"># save 60 1000    //关闭RDB只需要将所有的save保存策略注释掉即可</span><br></pre></td></tr></tbody></table></figure>
+
+<p>还可以手动执行命令生成RDB快照，进入redis客户端执行命令<strong>save</strong>或<strong>bgsave</strong>可以生成dump.rdb文件，每次命令执行都会将所有redis内存快照到一个新的rdb文件里，并覆盖原有rdb快照文件。</p>
+<p>以下是dump.rdb的内容</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">[root@redis-base redis]# cat dump.rdb </span><br><span class="line">REDIS0009�      redis-ver5.0.3�</span><br><span class="line">redis-bits�@�ctime�_used-mem�hi</span><br><span class="line">                                �</span><br><span class="line">                                 aof-preamble���</span><br><span class="line">ke3�set3edckehello</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+
+
+<ul>
+<li>bgsave的写时复制(COW)机制</li>
+</ul>
+<p>Redis 借助操作系统提供的写时复制技术（Copy-On-Write, COW），在生成快照的同时，依然可以正常处理写命令。简单来说，bgsave 子进程是由主线程 fork 生成的，可以共享主线程的所有内存数据。bgsave 子进程运行后，开始读取主线程的内存数据，并把它们写入 RDB 文件。此时，如果主线程对这些数据也都是读操作，那么，主线程和 bgsave 子进程相互不影响。但是，如果主线程要修改一块数据，那么，这块数据就会被复制一份，生成该数据的副本。然后，bgsave 子进程会把这个副本数据写入 RDB 文件，而在这个过程中，主线程仍然可以直接修改原来的数据。</p>
+<ul>
+<li>save与bgsave对比：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>save</th>
+<th>bgsave</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>IO类型</td>
+<td>同步</td>
+<td>异步</td>
+</tr>
+<tr>
+<td>是否阻塞redis其他命令</td>
+<td>是</td>
+<td>否(在生成子进程执行调用fork函数时会有短暂阻塞)</td>
+</tr>
+<tr>
+<td>复杂度</td>
+<td>O（n）</td>
+<td>O（n）</td>
+</tr>
+<tr>
+<td>优点</td>
+<td>不会消耗额外的内存</td>
+<td>不会阻塞客户端命令</td>
+</tr>
+<tr>
+<td>缺点</td>
+<td>阻塞客户端命令</td>
+<td>需要fork子进程，消耗内存</td>
+</tr>
+</tbody></table>
+<h1 id="AOF（append-only-file）"><a href="#AOF（append-only-file）" class="headerlink" title="AOF（append-only file）"></a>AOF（append-only file）</h1><ul>
+<li>开启aof</li>
+</ul>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">appendonly yes</span><br></pre></td></tr></tbody></table></figure>
+
+<ul>
+<li>重启redis服务端</li>
+</ul>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">src/redis-cli shutdown</span><br><span class="line">src/redis-server redis.conf</span><br></pre></td></tr></tbody></table></figure>
+
+<ul>
+<li>测试</li>
+</ul>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"># 在redis-cli执行一下命令</span><br><span class="line">set hello 112</span><br><span class="line"># 在appendonly.aof写入对应的内容为</span><br><span class="line">*3</span><br><span class="line">$3</span><br><span class="line">set</span><br><span class="line">$5</span><br><span class="line">hello</span><br><span class="line">$3</span><br><span class="line">112</span><br></pre></td></tr></tbody></table></figure>
+
+<ul>
+<li>追加到appendonly.aof的模式又三种</li>
+</ul>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">appendfsync always：每次有新命令追加到 AOF 文件时就执行一次&nbsp;fsync&nbsp;，非常慢，也非常安全。</span><br><span class="line">appendfsync everysec：每秒&nbsp;fsync&nbsp;一次，足够快，并且在故障时只会丢失 1 秒钟的数据。</span><br><span class="line">appendfsync no：从不&nbsp;fsync&nbsp;，将数据交给操作系统来处理。更快，也更不安全的选择。</span><br></pre></td></tr></tbody></table></figure>
+
+<p>redis默认使用everysec，推荐（并且也是默认）的措施为每秒 fsync 一次， 这种 fsync 策略可以兼顾速度和安全性。</p>
+<ul>
+<li>AOF重写命令</li>
+</ul>
+<p>Redis会定期对aof文件中的命令进行优化，在恢复数据时，可以减少没有用的命令的执行，例如：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">127.0.0.1:6379&gt; incr count</span><br><span class="line">(integer) 1</span><br><span class="line">127.0.0.1:6379&gt; incr count</span><br><span class="line">(integer) 2</span><br><span class="line">127.0.0.1:6379&gt; incr count</span><br><span class="line">(integer) 3</span><br><span class="line">127.0.0.1:6379&gt; incr count</span><br><span class="line">(integer) 4</span><br><span class="line">127.0.0.1:6379&gt; incr count</span><br><span class="line">(integer) 5</span><br><span class="line">127.0.0.1:6379&gt; incr count</span><br><span class="line">(integer) 6</span><br><span class="line">127.0.0.1:6379&gt; incr count</span><br><span class="line">(integer) 7</span><br><span class="line">127.0.0.1:6379&gt; incr count</span><br><span class="line">(integer) 8</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+<p>优化前的aof中文件的内容</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">*2</span><br><span class="line">$4</span><br><span class="line">incr</span><br><span class="line">$5</span><br><span class="line">count</span><br><span class="line">*2</span><br><span class="line">$4</span><br><span class="line">incr</span><br><span class="line">$5</span><br><span class="line">count</span><br><span class="line">*2</span><br><span class="line">$4</span><br><span class="line">incr</span><br><span class="line">$5</span><br><span class="line">count</span><br><span class="line">*2</span><br><span class="line">$4</span><br><span class="line">incr</span><br><span class="line">$5</span><br><span class="line">count</span><br><span class="line">*2</span><br><span class="line">$4</span><br><span class="line">incr</span><br><span class="line">$5</span><br><span class="line">count</span><br><span class="line">*2</span><br><span class="line">$4</span><br><span class="line">incr</span><br><span class="line">$5</span><br><span class="line">count</span><br><span class="line">*2</span><br><span class="line">$4</span><br><span class="line">incr</span><br><span class="line">$5</span><br><span class="line">count</span><br><span class="line">*2</span><br><span class="line">$4</span><br><span class="line">incr</span><br><span class="line">$5</span><br><span class="line">count</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+<p>手动执行aof重写<strong>bgrewriteaof</strong></p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">*3</span><br><span class="line">$3</span><br><span class="line">set</span><br><span class="line">$5</span><br><span class="line">count</span><br><span class="line">$3</span><br><span class="line">5</span><br></pre></td></tr></tbody></table></figure>
+
+<ul>
+<li>配置aof自动重写评率</li>
+</ul>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"># auto-aof-rewrite-min-size 64mb   //aof文件至少要达到64M才会自动重写，文件太小恢复速度本来就很快，重写的意义不大</span><br><span class="line"># auto-aof-rewrite-percentage 100  //aof文件自上一次重写后文件大小增长了100%则再次触发重写</span><br></pre></td></tr></tbody></table></figure>
+
+<h1 id="rdb和aof的区别"><a href="#rdb和aof的区别" class="headerlink" title="rdb和aof的区别"></a>rdb和aof的区别</h1><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>rdb</th>
+<th>aof</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>启动优先级</td>
+<td>低</td>
+<td>高</td>
+</tr>
+<tr>
+<td>文件大小</td>
+<td>小</td>
+<td>大</td>
+</tr>
+<tr>
+<td>恢复数据的速度</td>
+<td>快</td>
+<td>慢</td>
+</tr>
+<tr>
+<td>数据安全</td>
+<td>容易丢失</td>
+<td>根据策略决定</td>
+</tr>
+</tbody></table>
+<p>生产环境可以都启用，redis启动时如果既有rdb文件又有aof文件则优先选择aof文件恢复数据，因为aof一般来说数据更全一点。</p>
+<h1 id="Redis-4-0-混合持久化"><a href="#Redis-4-0-混合持久化" class="headerlink" title="Redis 4.0 混合持久化"></a>Redis 4.0 混合持久化</h1><p> 重启 Redis 时，我们很少使用 RDB来恢复内存状态，因为会丢失大量数据。我们通常使用 AOF 日志重放，但是重放 AOF 日志性能相对 RDB来说要慢很多，这样在 Redis 实例很大的情况下，启动需要花费很长的时间。 Redis 4.0 为了解决这个问题，带来了一个新的持久化选项——混合持久化。</p>
+<p>通过如下配置可以开启混合持久化(<strong>必须先开启aof</strong>)：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">aof-use-rdb-preamble yes  </span><br></pre></td></tr></tbody></table></figure>
+
+<p>如果开启了混合持久化，<strong>AOF在重写时</strong>，不再是单纯将内存数据转换为RESP命令写入AOF文件，而是将重写<strong>这一刻之前</strong>的内存做RDB快照处理，并且将RDB快照内容和<strong>增量的</strong>AOF修改内存数据的命令存在一起，都写入新的AOF文件，新的文件一开始不叫appendonly.aof，等到重写完新的AOF文件才会进行改名，覆盖原有的AOF文件，完成新旧两个AOF文件的替换。</p>
+<p>于是在 Redis 重启的时候，可以先加载 RDB 的内容，然后再重放增量 AOF 日志就可以完全替代之前的 AOF 全量文件重放，因此重启效率大幅得到提升。</p>
+<p>混合持久化AOF文件结构如下:</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">REDIS0009�      redis-ver5.0.3�</span><br><span class="line">�edis-bits�@�ctime��,�_used-mem</span><br><span class="line"> aof-preamble��kexiquan�counthello�p��=�c�u|�*2</span><br><span class="line"># 以上是rdb快照，以下是aof模式</span><br><span class="line">$6</span><br><span class="line">SELECT</span><br><span class="line">$1</span><br><span class="line">0</span><br><span class="line">*3</span><br><span class="line">$3</span><br><span class="line">set</span><br><span class="line">$3</span><br><span class="line">kxq</span><br><span class="line">$10</span><br><span class="line">kezhuoquan</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+]]></content>
+      <categories>
+        <category>Redis</category>
+      </categories>
+      <tags>
+        <tag>持久化</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>redis常用的命令以及应用场景</title>
+    <url>/2020/11/25/redis/redis-chang-yong-de-ming-ling-yi-ji-ying-yong-chang-jing/</url>
+    <content><![CDATA[<h2 id="通用命令："><a href="#通用命令：" class="headerlink" title="通用命令："></a>通用命令：</h2><p><strong>keys *</strong> [pattern] — 遍历当前reids所有的key O(n)</p>
+<p><strong>dbsize</strong> — 计算key的总数 O(1)</p>
+<p><strong>exists</strong> [key] — 判断key是否存在 O(1)</p>
+<p><strong>del</strong> [key…] — 删除一个或多个指定的key O(1)</p>
+<p><strong>expire</strong> key [seconds] — key在seconds秒后过期 O(1)</p>
+<p><strong>ttl</strong> [key] — 查看key剩余的过期时间 O(1)</p>
+<p><strong>persist</strong> [key] — 去掉key的过期时间 O(1)</p>
+<p><strong>type</strong> [key] — 返回key的数据结构类型 O(1)</p>
+<h2 id="String相关命令："><a href="#String相关命令：" class="headerlink" title="String相关命令："></a>String相关命令：</h2><p><strong>get</strong> [key] — 获取key对应的value O(1)</p>
+<p><strong>mget</strong> [key1 ke2 …] — 批量获取key，原子操作 O(n)</p>
+<p><strong>getset</strong> [key newValue] — 设置key新值为newValue并返回旧的value O(1)</p>
+<p><strong>getrange</strong> [key start end] — 获取字符串指定下标所有的值 O(1)</p>
+<p><strong>set</strong> [key value] — 设置key-value O(1)å</p>
+<p><strong>setrange</strong> [key index value] — 设置指定下标所有对应的值 O(1)</p>
+<p><strong>mset</strong> [key1 value1 key2 value2 …] — 批量设置key-value O(n)</p>
+<p><strong>append</strong> [key value] — 将value追加到旧的value O(1)</p>
+<p><strong>setnx</strong> [key value] — key不存在，才设置 O(1)</p>
+<p><strong>set</strong> [key value xx] — key存在，才设置 O(1)</p>
+<p><strong>setex</strong> [key value seconds] — 设置key，同时设置过期时间 O(1)</p>
+<p><strong>incr</strong> [key] — key自增1，如果key不存在，自增后get(key)=1 O(1)</p>
+<p><strong>decr</strong> [key] — key自减1，如果key不存在，自减后get(key)=-1 O(1)</p>
+<p><strong>incrby</strong> [key k] — key自增k，如果key不存在，自增后get(key)=k O(1)</p>
+<p><strong>incrbyfloat</strong> [key 3.5] — 增加key对应的float值3.5 如需减法，传负值即可 O(1)</p>
+<p><strong>decrby</strong> [key k] — key自减k，如果key不存在，自减后get(key)=-k O(1)</p>
+<p><strong>strlen</strong> [key] — 返回字符串的长度（注意中文占用字节数的问题）O(1)</p>
+<h2 id="string应用场景"><a href="#string应用场景" class="headerlink" title="string应用场景"></a>string应用场景</h2><ul>
+<li>存储字符串和json字符串</li>
+<li>存储图片</li>
+<li>计数器</li>
+</ul>
+<h2 id="Hash相关命令："><a href="#Hash相关命令：" class="headerlink" title="Hash相关命令："></a>Hash相关命令：</h2><p><strong>hget</strong> [key field] — 获取hash key对应的field的value O(1)</p>
+<p><strong>hset</strong> [key field value] — 设置hash key对应的field的value O(1)</p>
+<p><strong>hdel</strong> [key field] — 删除hash key对应的field的value O(1)</p>
+<p><strong>hexists</strong> [key field] — 判断hash key 是否有field O(1)</p>
+<p><strong>hlen</strong> [key] — 获取hash key field的数量，redis内部维护了这个值的计数，而不是每次遍历，效率高 O(1)</p>
+<p><strong>hmget</strong> [key field1 field2 …] — 批量获取hash key的一批field对应的值 O(n)</p>
+<p><strong>hmset</strong> [key field1 field2 …] — 批量设置hash key的一批field的value O(n)</p>
+<p><strong>hincrby</strong> [key field count] — 设置hash key的field字段自增count O(1)</p>
+<p><strong>hincrbyfloat</strong> [key field float] — hincrby的浮点数版 O(1)</p>
+<p><strong>hgetall</strong> [key] — 返回hash key对应所有的field和value O(n)</p>
+<p><strong>hvals</strong> [key] — 返回hash key对应所有field的value O(n)</p>
+<p><strong>hkeys</strong> [key] — 返回hash key对应的所有field O(n)</p>
+<p><strong>hsetnx</strong> [key field value] — 设置hash key对应的field的value 如过field存在，则失败 O(1)</p>
+<h2 id="List相关命令："><a href="#List相关命令：" class="headerlink" title="List相关命令："></a>List相关命令：</h2><p><strong>rpush</strong> [key value1 value2…valueN] — 从列表右端(后端)插入值 (1-N个) O(1~n)</p>
+<p><strong>lpush</strong> [key value1 value2…valueN] — 从列表左侧(头部)插入值 (1-N个) O(1~n)</p>
+<p><strong>linsert</strong> [key before|after value newValue] — 在list指定的值(前 | 后)插入newValue,需要遍历 O(n)</p>
+<p><strong>lpop</strong> [key] — 从列表左侧弹出一个item O(1)</p>
+<p><strong>rpop</strong> [key] — 从列表右侧弹出一个item O(1)</p>
+<p><strong>lrem</strong> [key count value] — 根据count值，从列表中删除所有value相等的项 O(n)</p>
+<p>(1) count &gt; 0，从左到右，删除最多count个与value相等的项</p>
+<p>(2) count &lt; 0，从右到左，删除最多count个与value相等的项</p>
+<p>(3) count = 0，删除list中所有与value相等的项</p>
+<p><strong>ltrim</strong> [key start end] — 按照索引范围修剪列表 O(n)</p>
+<p><strong>lrange</strong> [key start end] — 获取list指定索引范围的所有item，end为-1时，取到末尾 O(n)</p>
+<p><strong>lindex</strong> [key index] — 获取list指定索引的item，index为-1，取最后一个item O(n)</p>
+<p><strong>llen</strong> [key] — 获取list长度，内部优化值 O(1)</p>
+<p><strong>lset</strong> [key index newValue] — 设置list指定索引值为newValue O(n)</p>
+<p><strong>blpop</strong> [key timeout] — lpop阻塞版本，ti meout是阻塞超时时间，timeout=0为永不阻塞 O(1)</p>
+<p><strong>brpop</strong> [key timeout] — rpop阻塞版本，timeout是阻塞超时时间，timeout=0为永不阻塞 O(1)</p>
+<h2 id="Set相关命令："><a href="#Set相关命令：" class="headerlink" title="Set相关命令："></a>Set相关命令：</h2><p><strong>sadd</strong> [key element] — 向集合key添加element(如果element存在，添加失败) O(1)</p>
+<p><strong>srem</strong> [key element] — 将集合key中的element移除掉 O(1)</p>
+<p><strong>scard</strong> [key] — 计算集合大小 O(1)</p>
+<p><strong>sismember</strong> [key value] — 判断value是否在集合中</p>
+<p><strong>srandmember</strong> [key count] — 从集合中随机挑count个元素，只是选取，不会提出</p>
+<p><strong>spop</strong> [key] — 从集合中随机弹出一个元素</p>
+<p><strong>smembers</strong> [key] — 获取集合所有元素，返回结果无序，如果集合大小心使用</p>
+<p><strong>sdiff</strong> [key1 key2] — 取两个集合的差集</p>
+<p><strong>sinter</strong> [key1 key2] — 取两个集合的交集</p>
+<p><strong>sunion</strong> [key1 key2] — 取两个集合的并集</p>
+<p><strong>sdiff | sinter | sunion + store destkey</strong> — 将差集、交集、并集结果保存到destkey中</p>
+<h2 id="Zset相关命令："><a href="#Zset相关命令：" class="headerlink" title="Zset相关命令："></a>Zset相关命令：</h2><p><strong>zadd</strong> [key score element(可以是多对)] — 向集合中添加score和element O(logN)</p>
+<p><strong>zrem</strong> [key element(可以是多个)] — 删除集合中元素 O(1)</p>
+<p><strong>zscore</strong> [key element] — 返回改元素的分数 O(1)</p>
+<p><strong>zincrby</strong> [key increScore element] — 增加或减少元素分数 O(1)</p>
+<p><strong>zcard</strong> [key] — 返回元素的总个数 O(1)</p>
+<p><strong>zrank</strong> [key element] — 返回element在集合中的排名，从小到大排</p>
+<p><strong>zrevrank</strong> [key element] — 返回element在集合中的排名，从大到小排</p>
+<p><strong>zrange</strong> [key start end withscores] — 获取指定排名范围的的元素和它的分数，可以不带withscores，即不打印分数 O(log(n)+m)</p>
+<p><strong>zrevrange</strong> [key start end withscores] — zrange的倒序版本</p>
+<p><strong>zrangebyscore</strong> [key minScore maxScore withscores] — 返回指定分数范围的升序元素 O(log(n)+m)</p>
+<p><strong>zrevrangebyscore</strong> [key minScore maxScore withscores] — zrangebyscore降序版本</p>
+<p><strong>zcount</strong> [key minScore maxScore] — 返回有序集合指定分数范围的元素个数 O(log(n)+m)</p>
+<p><strong>zremrangebyrank</strong> [key start end] — 删除指定排名内的升序元素 O(log(n)+m)</p>
+<p><strong>zremrangebyscore</strong> [key minScore maxScore] — 删除指定分数内的升序元素 O(log(n)+m)</p>
+<p><strong>zinterstore</strong> — 取两集合交集并存储</p>
+<p><strong>zunionstore</strong> — 取两集合并集并存储</p>
+<h2 id="Bitmap相关命令："><a href="#Bitmap相关命令：" class="headerlink" title="Bitmap相关命令："></a>Bitmap相关命令：</h2><p><strong>setbit</strong> [key offset value] — 给位图指定索引设置值（0或1）注意offset偏移量设置，可能有较大耗时</p>
+<p><strong>getbit</strong> [key offset] — 获取位图指定索引的值</p>
+<p><strong>bitcount</strong> [key start end] — 获取位图指定范围内（start到end，单位为字节，如果不指定就是获取全部）值为1的个数</p>
+<p><strong>bitop</strong> [op destkey key…] — 做多个bitmap的and、or、not、xor操作，并将结果保存在destkey中</p>
+<p><strong>bitpos</strong> [key targetBit start end] — 计算位图指定范围（start到end，单位为字节，如果不指定就是获取全部）第一个偏移量对应的值等于targetBit（0或1）的位置</p>
+<h2 id="HyperLoglog相关命令：存储的是基数"><a href="#HyperLoglog相关命令：存储的是基数" class="headerlink" title="HyperLoglog相关命令：存储的是基数"></a>HyperLoglog相关命令：存储的是基数</h2><p><strong>pfadd</strong> [key element…] — 向hyperloglog添加元素</p>
+<p><strong>pfcount</strong> [key…] — 计算hyperloglog的独立总数</p>
+<p><strong>pfmerge</strong> [destkey sourcekey…] — 合并多个sourcekey到destkey</p>
+<p>GEO相关命令（redis3.2版本）：</p>
+<p><strong>geoadd</strong> [key longitude latitude member …] — 增加一个或多个地理位置信息</p>
+<p><strong>geopos</strong> [key member…] — 获取一个或多个member的经纬度</p>
+<p><strong>geodist</strong> [key member1 member2 unit] — 按某个单位（unit：m、km、mi、ft）获取两个地理位置的距离</p>
+<p><strong>georadius</strong> — 功能参数太多，使用查api</p>
+<ul>
+<li>geo说明：</li>
+</ul>
+<p>type geoKey = zset </p>
+<p>没有删除api：zrem key member</p>
+<h1 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h1><p><strong>基数不大，数据量不大就用不上，会有点大材小用，浪费空间</strong></p>
+<p><strong>有局限性，就是只能统计基数数量，不知道具体内容</strong></p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">统计注册ip数</span><br><span class="line">统计每日访问ip数</span><br><span class="line">统计页面实时UV数</span><br><span class="line">统计在线用户数</span><br><span class="line">统计每天搜索不同词条的个数</span><br><span class="line">统计真实文章阅读数	</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="string"><a href="#string" class="headerlink" title="string"></a>string</h2><h3 id="计时器"><a href="#计时器" class="headerlink" title="计时器"></a>计时器</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"># 文章的阅读数</span><br><span class="line">incr article:readcount:{id}</span><br><span class="line">get article:readcount:{id}</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="web集群sesson共享"><a href="#web集群sesson共享" class="headerlink" title="web集群sesson共享"></a>web集群sesson共享</h3><p>spring session + redis实现session共享</p>
+<h3 id="分布式系统全局序列号"><a href="#分布式系统全局序列号" class="headerlink" title="分布式系统全局序列号"></a>分布式系统全局序列号</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"># </span><br><span class="line">incrby orderId 1000</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="单值缓存"><a href="#单值缓存" class="headerlink" title="单值缓存"></a>单值缓存</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">set key value</span><br><span class="line">get key</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="对象缓存"><a href="#对象缓存" class="headerlink" title="对象缓存"></a>对象缓存</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">set user:1 value(json数据格式)</span><br><span class="line">mset user:1:name zhangsan user:1:age 12 user:1:addr guangdong</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="分布式锁"><a href="#分布式锁" class="headerlink" title="分布式锁"></a>分布式锁</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"># 加锁</span><br><span class="line">set lockname true ex 10 nx</span><br><span class="line"># 解锁</span><br><span class="line">del lockname</span><br><span class="line"># 这里为了保证删除的是自己的锁，以及保证执行为原子性，使用lua脚本来完成解锁</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="hash"><a href="#hash" class="headerlink" title="hash"></a>hash</h2><h3 id="对象存储"><a href="#对象存储" class="headerlink" title="对象存储"></a>对象存储</h3><figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// java对象</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span></span>{</span><br><span class="line">  <span class="keyword">private</span> Integer id;</span><br><span class="line">  <span class="keyword">private</span> String username;</span><br><span class="line">  <span class="keyword">private</span> Integer age;</span><br><span class="line">}</span><br><span class="line"><span class="comment">// id = 1</span></span><br><span class="line"><span class="comment">// username = 'zhangsan'</span></span><br><span class="line"><span class="comment">// age = 19</span></span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">hmset user {userId}:name zhangsan {userId}:age 19</span><br><span class="line">hmset user 1:name zhangsan 1:age 19</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="购物车"><a href="#购物车" class="headerlink" title="购物车"></a>购物车</h3><p><img src="https://gitee.com/kexiquan/picture/raw/master/uPic/image-20201125165953548.png" alt="image-20201125165953548"></p>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Cart</span></span>{</span><br><span class="line">  Integer cartId;</span><br><span class="line">  String field;</span><br><span class="line">  Integer count;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"># 添加商品</span><br><span class="line">hset cart:1001 10008 1</span><br><span class="line"># 添加数量</span><br><span class="line">hincrby cart:1001 10008 1</span><br><span class="line"># 删除数量</span><br><span class="line">hincrby cart:1001 10008 -1</span><br><span class="line"># 删除商品</span><br><span class="line">hdel cart:1001 10008</span><br><span class="line"># 获取购物车所有的商品</span><br><span class="line">hgetall cart:1001</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="hash和string对比"><a href="#hash和string对比" class="headerlink" title="hash和string对比"></a>hash和string对比</h3><table>
+<thead>
+<tr>
+<th>优点</th>
+<th>缺点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>同类数据归档整合存储，方便数据管理 \n 相比string操作消耗内存与cpu更小 \n 相比string存储更节省空间</td>
+<td>过期功能不能使用在field上，只能使用在key上 \n redis集群架构下不适合大规模使用</td>
+</tr>
+</tbody></table>
+<h2 id="list"><a href="#list" class="headerlink" title="list"></a>list</h2><h3 id="常用的数据结构"><a href="#常用的数据结构" class="headerlink" title="常用的数据结构"></a>常用的数据结构</h3><ul>
+<li>stack = lpush+lpop</li>
+<li>queue = lpush + rpop</li>
+<li>blocking mq = lpush + brpop</li>
+</ul>
+<h2 id="set"><a href="#set" class="headerlink" title="set"></a>set</h2><h3 id="抽奖"><a href="#抽奖" class="headerlink" title="抽奖"></a>抽奖</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"># 参加抽奖</span><br><span class="line">sadd key {userId}</span><br><span class="line"># 查看所有的抽奖者</span><br><span class="line">smembers key</span><br><span class="line"># 抽取count名中奖者</span><br><span class="line">srandmember key count # 抽完还有人数不变</span><br><span class="line">spop key count # 抽完人数减少</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="点赞-收藏-标签"><a href="#点赞-收藏-标签" class="headerlink" title="点赞/收藏/标签"></a>点赞/收藏/标签</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"># 点赞</span><br><span class="line">SADD  like:{消息ID}  {用户ID}</span><br><span class="line"># 取消点赞</span><br><span class="line">SREM like:{消息ID}  {用户ID}</span><br><span class="line"># 检查用户是否点过赞</span><br><span class="line">SISMEMBER  like:{消息ID}  {用户ID}</span><br><span class="line"># 获取点赞的用户列表</span><br><span class="line">SMEMBERS like:{消息ID}</span><br><span class="line"># 获取点赞用户数 </span><br><span class="line">SCARD like:{消息ID}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="集合操作"><a href="#集合操作" class="headerlink" title="集合操作"></a>集合操作</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">sadd set1 1 2 3</span><br><span class="line">sadd set2 2 3 4</span><br><span class="line">sadd set3 3 4 5</span><br><span class="line"># 交集</span><br><span class="line">sinter set1 set2 set3 # 结果：{3}</span><br><span class="line"># 并集</span><br><span class="line">sunion set1 set2 set3 # 结果：{1 2 3 4 5}</span><br><span class="line"># 差集</span><br><span class="line">sdiff set1 set2 set3 # 结果：{1}</span><br></pre></td></tr></tbody></table></figure>
+
+
+
+<h2 id="zset"><a href="#zset" class="headerlink" title="zset"></a>zset</h2><h3 id="动漫排行版"><a href="#动漫排行版" class="headerlink" title="动漫排行版"></a>动漫排行版</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"># 点击电影</span><br><span class="line">zincrby film:20201125 1 博人传</span><br><span class="line"># 展示日排行前10</span><br><span class="line">zrevrange film;20201125 0 9 WITHSCORES</span><br><span class="line"># 一周内搜索榜单计算</span><br><span class="line">ZUNIONSTORE  film:20201120-20201127  7 </span><br><span class="line"># 展示一周内排行前十</span><br><span class="line">ZREVRANGE film:20201120-20201127  0  9  WITHSCORES</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+]]></content>
+      <categories>
+        <category>Redis</category>
+      </categories>
+      <tags>
+        <tag>应用</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Redis持久化机制</title>
+    <url>/2020/11/26/redis/redis-ji-qun/</url>
+    <content><![CDATA[<h1 id="主从结构"><a href="#主从结构" class="headerlink" title="主从结构"></a>主从结构</h1><p><img src="https://gitee.com/kexiquan/picture/raw/master/uPic/image-20201127160256213.png" alt="image-20201127160256213"></p>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"># 复制一份redis.conf</span><br><span class="line">cp redis.conf redis-6380.conf</span><br><span class="line"># 修改配置文件</span><br><span class="line">vi redis-6380.conf</span><br><span class="line"># 修改的内容为：</span><br><span class="line">port 6380</span><br><span class="line">pidfile /var/run/redis_6380.pid  # 把pid进程号写入pidfile配置的文件</span><br><span class="line">logfile "6380.log"</span><br><span class="line">dir /usr/local/redis-5.0.3/data/6380  # 指定数据存放目录</span><br><span class="line"># 需要注释掉bind</span><br><span class="line"># bind 127.0.0.1（bind绑定的是自己机器网卡的ip，如果有多块网卡可以配多个ip，代表允许客户端通过机器的哪些网卡ip去访问，内网一般可以不配置bind，注释掉即可）</span><br><span class="line"></span><br><span class="line">3、配置主从复制</span><br><span class="line">replicaof 192.168.0.60 6379   # 从本机6379的redis实例复制数据，Redis 5.0之前使用slaveof</span><br><span class="line">replica-read-only yes  # 配置从节点只读</span><br><span class="line"></span><br><span class="line"># 启动从节点</span><br><span class="line">redis-server redis-6380.conf</span><br><span class="line"># 连接从节点</span><br><span class="line">redis-cli -p 6380</span><br><span class="line"></span><br><span class="line"># 连接主节点</span><br><span class="line">redis-cli</span><br><span class="line"># 在主节点上设置数据</span><br><span class="line">set hello hello</span><br><span class="line"># 在从节点获取hello</span><br><span class="line">get hello</span><br><span class="line">hello</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## 可以根据以上配置多一个从节点</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="Redis主从原理"><a href="#Redis主从原理" class="headerlink" title="Redis主从原理"></a>Redis主从原理</h2><h3 id="全量复制"><a href="#全量复制" class="headerlink" title="全量复制"></a>全量复制</h3><ul>
+<li>流程图</li>
+</ul>
+<p><img src="https://gitee.com/kexiquan/picture/raw/master/uPic/image-20201127162006916.png" alt="image-20201127162006916"></p>
+<ul>
+<li>原理</li>
+</ul>
+<p>如果你为master配置了一个slave，不管这个slave是否是第一次连接上Master，它都会发送一个<strong>PSYNC</strong>命令给master请求复制数据。</p>
+<p>master收到PSYNC命令后，会在后台进行数据持久化通过bgsave生成最新的rdb快照文件，持久化期间，master会继续接收客户端的请求，它会把这些可能修改数据集的请求缓存在内存中。当持久化进行完毕以后，master会把这份rdb文件数据集发送给slave，slave会把接收到的数据进行持久化生成rdb，然后再加载到内存中。然后，master再将之前缓存在内存中的命令发送给slave。</p>
+<p>当master与slave之间的连接由于某些原因而断开时，slave能够自动重连Master，如果master收到了多个slave并发连接请求，它只会进行一次持久化，而不是一个连接一次，然后再把这一份持久化的数据发送给多个并发连接的slave。</p>
+<h3 id="数据部分复制"><a href="#数据部分复制" class="headerlink" title="数据部分复制"></a>数据部分复制</h3><ul>
+<li>流程图</li>
+</ul>
+<p><img src="https://gitee.com/kexiquan/picture/raw/master/uPic/image-20201127163002271.png" alt="image-20201127163002271"></p>
+<ul>
+<li>原理</li>
+</ul>
+<p>当master和slave断开重连后，一般都会对整份数据进行复制。但从redis2.8版本开始，redis改用可以支持部分数据复制的命令PSYNC去master同步数据，slave与master能够在网络连接断开重连后只进行部分数据复制(<strong>断点续传</strong>)。</p>
+<p>master会在其内存中创建一个复制数据用的缓存队列，缓存最近一段时间的数据，master和它所有的slave都维护了复制的数据下标offset和master的进程id，因此，当网络连接断开后，slave会请求master继续进行未完成的复制，从所记录的数据下标开始。如果master进程id变化了，或者从节点数据下标offset太旧，已经不在master的缓存队列里了，那么将会进行一次全量数据的复制。</p>
+<h2 id="缓解主从复制"><a href="#缓解主从复制" class="headerlink" title="缓解主从复制"></a>缓解主从复制</h2><p>如果有很多从节点，为了缓解<strong>主从复制风暴</strong>(多个从节点同时复制主节点导致主节点压力过大)，可以做如下架构，让部分从节点与从节点(与主节点同步)同步数据</p>
+<p><img src="https://gitee.com/kexiquan/picture/raw/master/uPic/image-20201127163147886.png" alt="image-20201127163147886"></p>
+<h1 id="哨兵高可用架构"><a href="#哨兵高可用架构" class="headerlink" title="哨兵高可用架构"></a>哨兵高可用架构</h1><p><img src="https://gitee.com/kexiquan/picture/raw/master/uPic/wMRiWH.jpg" alt="wMRiWH"></p>
+<p>sentinel哨兵是特殊的redis服务，不提供读写服务，主要用来监控redis实例节点。</p>
+<p>哨兵架构下client端第一次从哨兵找出redis的主节点，后续就直接访问redis的主节点，不会每次都通过sentinel代理访问redis的主节点，当redis的主节点发生变化，哨兵会第一时间感知到，并且将新的redis主节点通知给client端(这里面redis的client端一般都实现了订阅功能，订阅sentinel发布的节点变动消息)</p>
+<h2 id="搭载步骤"><a href="#搭载步骤" class="headerlink" title="搭载步骤"></a>搭载步骤</h2><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"># 复制一份sentinel.conf文件</span><br><span class="line">cp sentinel.conf sentinel-26379.conf</span><br><span class="line"></span><br><span class="line"># 将相关配置修改为如下值：</span><br><span class="line">port 26379</span><br><span class="line">daemonize yes</span><br><span class="line">pidfile "/var/run/redis-sentinel-26379.pid"</span><br><span class="line">logfile "26379.log"</span><br><span class="line">dir "/usr/local/redis-5.0.3/data"</span><br><span class="line"># sentinel monitor &lt;master-redis-name&gt; &lt;master-redis-ip&gt; &lt;master-redis-port&gt; &lt;quorum&gt;</span><br><span class="line"># quorum是一个数字，指明当有多少个sentinel认为一个master失效时(值一般为：sentinel总数/2 + 1)，master才算真正失效</span><br><span class="line">sentinel monitor mymaster 192.168.0.60 6379 2   # mymaster这个名字随便取，客户端访问时会用到</span><br><span class="line"></span><br><span class="line"># 启动sentinel哨兵实例</span><br><span class="line">src/redis-sentinel sentinel-26379.conf</span><br><span class="line"></span><br><span class="line"># 查看sentinel的info信息</span><br><span class="line">src/redis-cli -p 26379</span><br><span class="line">127.0.0.1:26379&gt;info</span><br><span class="line"># 可以看到Sentinel的info里已经识别出了redis的主从</span><br><span class="line"># Sentinel</span><br><span class="line">sentinel_masters:1</span><br><span class="line">sentinel_tilt:0</span><br><span class="line">sentinel_running_scripts:0</span><br><span class="line">sentinel_scripts_queue_length:0</span><br><span class="line">sentinel_simulate_failure_flags:0</span><br><span class="line">master0:name=mymaster,status=ok,address=172.16.233.130:6379,slaves=2,sentinels=3</span><br><span class="line"># 可以自己再配置两个sentinel，端口26380和26381，注意上述配置文件里的对应数字都要修改</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+<p>sentinel集群都启动完毕后，会将哨兵集群的元数据信息写入所有sentinel的配置文件里去(追加在文件的最下面)，我们查看下如下配置文件sentinel-26379.conf，如下所示：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">sentinel known-replica mymaster 172.16.233.130 6381</span><br><span class="line">sentinel known-replica mymaster 172.16.233.130 6380</span><br><span class="line">sentinel known-sentinel mymaster 172.16.233.130 26380 99e958d5a646bfed933eea8b60126faf45d25347</span><br><span class="line">sentinel known-sentinel mymaster 172.16.233.130 26381 5f8d6c3d49c7980d7a21ce899cdd472c0cc849a3</span><br></pre></td></tr></tbody></table></figure>
+
+<p>当redis主节点如果挂了，哨兵集群会重新选举出新的redis主节点，同时会修改所有sentinel节点配置文件的集群元数据信息，比如6379的redis如果挂了，假设选举出的新主节点是6381，则sentinel文件里的集群元数据信息会变成如下所示：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">sentinel known-replica mymaster 172.16.233.130 6379</span><br><span class="line">sentinel known-replica mymaster 172.16.233.130 6380</span><br><span class="line">sentinel known-sentinel mymaster 172.16.233.130 26380 99e958d5a646bfed933eea8b60126faf45d25347</span><br><span class="line">sentinel known-sentinel mymaster 172.16.233.130 26381 5f8d6c3d49c7980d7a21ce899cdd472c0cc849a3</span><br></pre></td></tr></tbody></table></figure>
+
+<p>同时还会修改sentinel文件里之前配置的mymaster对应的6379端口，改为6381</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">sentinel monitor mymaster 192.168.0.60 6381 2</span><br></pre></td></tr></tbody></table></figure>
+
+
+
+<h1 id="Cluster高可用集群"><a href="#Cluster高可用集群" class="headerlink" title="Cluster高可用集群"></a>Cluster高可用集群</h1><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>Redis 集群是一个提供在<strong>多个Redis间节点间共享数据</strong>的程序集。</p>
+<p>Redis集群并不支持处理多个keys的命令,因为这需要在不同的节点间移动数据,从而达不到像Redis那样的性能,在高负载的情况下可能会导致不可预料的错误.</p>
+<p>Redis 集群通过分区来提供<strong>一定程度的可用性</strong>,在实际环境中当某个节点宕机或者不可达的情况下继续处理命令. Redis 集群的优势:</p>
+<ul>
+<li>自动分割数据到不同的节点上。</li>
+<li>整个集群的部分节点失败或者不可达的情况下能够继续处理命令。</li>
+</ul>
+<h2 id="数据分片"><a href="#数据分片" class="headerlink" title="数据分片"></a>数据分片</h2><p>Redis 集群没有使用一致性hash, 而是引入了 <strong>哈希槽</strong>的概念.</p>
+<p>Redis 集群有16384个哈希槽,每个key通过CRC16校验后对16384取模来决定放置哪个槽.集群的每个节点负责一部分hash槽,举个例子,比如当前集群有3个节点,那么:</p>
+<ul>
+<li>节点 A 包含 0 到 5500号哈希槽.</li>
+<li>节点 B 包含5501 到 11000 号哈希槽.</li>
+<li>节点 C 包含11001 到 16384号哈希槽.</li>
+</ul>
+<p>这种结构很容易添加或者删除节点. 比如如果我想新添加个节点D, 我需要从节点 A, B, C中得部分槽到D上. 如果我想移除节点A,需要将A中的槽移到B和C节点上,然后将没有任何槽的A节点从集群中移除即可. 由于从一个节点将哈希槽移动到另一个节点并不会停止服务,所以无论添加删除或者改变某个节点的哈希槽的数量都不会造成集群不可用的状态.</p>
+<h2 id="主从复制模型"><a href="#主从复制模型" class="headerlink" title="主从复制模型"></a>主从复制模型</h2><p>为了使在部分节点失败或者大部分节点无法通信的情况下集群仍然可用，所以集群使用了主从复制模型,每个节点都会有N-1个复制品.</p>
+<p>在我们例子中具有A，B，C三个节点的集群,在没有复制模型的情况下,如果节点B失败了，那么整个集群就会以为缺少5501-11000这个范围的槽而不可用.</p>
+<p>然而如果在集群创建的时候（或者过一段时间）我们为每个节点添加一个从节点A1，B1，C1,那么整个集群便有三个master节点和三个slave节点组成，这样在节点B失败后，集群便会选举B1为新的主节点继续服务，整个集群便不会因为槽找不到而不可用了</p>
+<p>不过当B和B1 都失败后，集群是不可用的.</p>
+<h2 id="数据一致性"><a href="#数据一致性" class="headerlink" title="数据一致性"></a>数据一致性</h2><p>Redis 并不能保证数据的<strong>强一致性</strong>. 这意味这在实际中集群在特定的条件下可能会丢失写操作.</p>
+<p>第一个原因是因为集群是用了异步复制. 写操作过程:</p>
+<ul>
+<li>客户端向主节点B写入一条命令.</li>
+<li>主节点B向客户端回复命令状态.</li>
+<li>主节点将写操作复制给他得从节点 B1, B2 和 B3.</li>
+</ul>
+<p>主节点对命令的复制工作发生在返回命令回复之后， 因为如果每次处理命令请求都需要等待复制操作完成的话， 那么主节点处理命令请求的速度将极大地降低 —— 我们必须在性能和一致性之间做出权衡。 注意：Redis 集群可能会在将来提供同步写的方法。 Redis 集群另外一种可能会丢失命令的情况是集群出现了网络分区， 并且一个客户端与至少包括一个主节点在内的少数实例被孤立。</p>
+<p>举个例子 假设集群包含 A 、 B 、 C 、 A1 、 B1 、 C1 六个节点， 其中 A 、B 、C 为主节点， A1 、B1 、C1 为A，B，C的从节点， 还有一个客户端 Z1 假设集群中发生网络分区，那么集群可能会分为两方，大部分的一方包含节点 A 、C 、A1 、B1 和 C1 ，小部分的一方则包含节点 B 和客户端 Z1 .</p>
+<p>Z1仍然能够向主节点B中写入, 如果网络分区发生时间较短,那么集群将会继续正常运作,如果分区的时间足够让大部分的一方将B1选举为新的master，那么Z1写入B中得数据便丢失了.</p>
+<p>注意， 在网络分裂出现期间， 客户端 Z1 可以向主节点 B 发送写命令的最大时间是有限制的， 这一时间限制称为节点超时时间（node timeout）， 是 Redis 集群的一个重要的配置选项：</p>
+<h2 id="集群图"><a href="#集群图" class="headerlink" title="集群图"></a>集群图</h2><p><img src="https://gitee.com/kexiquan/picture/raw/master/uPic/image-20201128104558994.png" alt="image-20201128104558994"></p>
+<h2 id="搭载集群"><a href="#搭载集群" class="headerlink" title="搭载集群"></a>搭载集群</h2><ul>
+<li>实例</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>主机 端口</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>172.16.233.130 : 8001</td>
+<td>Master1</td>
+</tr>
+<tr>
+<td>172.16.233.130 : 8004</td>
+<td>Slave1</td>
+</tr>
+<tr>
+<td>172.16.233.131 : 8002</td>
+<td>Master2</td>
+</tr>
+<tr>
+<td>172.16.233.131 : 8005</td>
+<td>Slave2</td>
+</tr>
+<tr>
+<td>172.16.233.132 : 8003</td>
+<td>Master3</td>
+</tr>
+<tr>
+<td>172.16.233.132 : 8006</td>
+<td>Slave3</td>
+</tr>
+</tbody></table>
+<ul>
+<li>关闭防火墙</li>
+</ul>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">systemctl stop firewalld # 临时关闭防火墙</span><br><span class="line">systemctl disable firewalld # 禁止开机启动</span><br></pre></td></tr></tbody></table></figure>
+
+<ul>
+<li>配置</li>
+</ul>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"># 172.16.233.130（master：8001，slave：8004） 操作</span><br><span class="line">cd /usr/local/redis</span><br><span class="line"># 复制conf文件</span><br><span class="line">cp redis.conf cluster-8001.conf</span><br><span class="line"># 修改配置文件</span><br><span class="line">vi cluster-8001.conf</span><br><span class="line"># 修改内容如下：</span><br><span class="line">daemonize yes</span><br><span class="line">port 8001（分别对每个机器的端口号进行设置）</span><br><span class="line">pidfile /var/run/redis_8001.pid  # 把pid进程号写入pidfile配置的文件</span><br><span class="line">dir /usr/local/redis/data/8001/（指定数据文件存放位置，必须要指定不同的目录位置，不然会丢失数据）</span><br><span class="line">cluster-enabled yes（启动集群模式）</span><br><span class="line">cluster-config-file nodes-8001.conf（集群节点信息文件，这里800x最好和port对应上）</span><br><span class="line">cluster-node-timeout 10000</span><br><span class="line"># bind 127.0.0.1（bind绑定的是自己机器网卡的ip，如果有多块网卡可以配多个ip，代表允许客户端通过机器的哪些网卡ip去访问，内网一般可以不配置bind，注释掉即可）</span><br><span class="line">protected-mode  no   （关闭保护模式）</span><br><span class="line">appendonly yes</span><br><span class="line">requirepass redis     (设置redis访问密码)</span><br><span class="line">masterauth redis     (设置集群节点间访问密码，跟上面一致)</span><br><span class="line"># 配置8004</span><br><span class="line">cp cluster-8001.conf cluster-8004.conf</span><br><span class="line">vi cluster-8004.conf </span><br><span class="line"># shift  + :，将所有的8001更换为8004</span><br><span class="line">%s/8001/8004/</span><br><span class="line"># 创建文件夹，不创建redis实例启动不起来</span><br><span class="line">mkdir data/8001 data/8004</span><br><span class="line"># 启动</span><br><span class="line">src/redis-server cluster-8001.conf</span><br><span class="line">src/redis-server cluster-8002.conf</span><br><span class="line"># 查看是否启动成功</span><br><span class="line">ps -ef ｜ grep redis</span><br><span class="line"># 复制一份cluster到各个机器上</span><br><span class="line">scp ./cluster-8001.conf root@172.16.233.131:/usr/local/redis</span><br><span class="line"># 按上面的操作将8001替换为对应的端口</span><br><span class="line"></span><br><span class="line"># 使用redis-cli创建集群</span><br><span class="line">/usr/local/redis/src/redis-cli -a redis --cluster create --cluster-replicas 1 172.16.233.130:8001 172.16.233.131:8002 172.16.233.132:8003 172.16.233.130:8004 172.16.233.131:8005 172.16.233.132:8006 </span><br></pre></td></tr></tbody></table></figure>
+
+<ul>
+<li>验证集群</li>
+</ul>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"># 连接任意一个集群</span><br><span class="line">src/redis-cli  -c -h -p (-a访问服务端密码，-c表示集群模式，指定ip地址和端口号）</span><br><span class="line">/usr/local/redis/src/redis-cli -a redis -c -h 172.16.233.130 -p 8001</span><br><span class="line"># 获取集群信息</span><br><span class="line">172.16.233.130:8001&gt; cluster info</span><br><span class="line">cluster_state:ok</span><br><span class="line">cluster_slots_assigned:16384</span><br><span class="line">cluster_slots_ok:16384</span><br><span class="line">cluster_slots_pfail:0</span><br><span class="line">cluster_slots_fail:0</span><br><span class="line">cluster_known_nodes:6</span><br><span class="line">cluster_size:3</span><br><span class="line">cluster_current_epoch:6</span><br><span class="line">cluster_my_epoch:1</span><br><span class="line">cluster_stats_messages_ping_sent:2403</span><br><span class="line">cluster_stats_messages_pong_sent:2451</span><br><span class="line">cluster_stats_messages_sent:4854</span><br><span class="line">cluster_stats_messages_ping_received:2446</span><br><span class="line">cluster_stats_messages_pong_received:2403</span><br><span class="line">cluster_stats_messages_meet_received:5</span><br><span class="line">cluster_stats_messages_received:4854</span><br><span class="line"></span><br><span class="line"># 获取节点信息</span><br><span class="line">172.16.233.130:8001&gt; cluster nodes</span><br><span class="line">3c71393c499bfe680e1f264f19b59e4b5cf1a925 172.16.233.130:8004@18004 slave bb7eb9e25bbe0ae13704a2431c43dc1a3c21938c 0 1606485268751 4 connected</span><br><span class="line">4c5527652b2bec69020cd7571089d5531419cea9 172.16.233.131:8005@18005 slave 5ea4096c4c84e34c0f9df2a67cbf6f03744ea6a4 0 1606485266720 5 connected</span><br><span class="line">04564091bbedaea3a90ac40103ff7fbf9ef9b743 172.16.233.130:8001@18001 myself,master - 0 1606485268000 1 connected 0-5460</span><br><span class="line">87af9ffbe879ce016fc6a305c425eb71734c422e 172.16.233.132:8006@18006 slave 04564091bbedaea3a90ac40103ff7fbf9ef9b743 0 1606485271803 6 connected</span><br><span class="line">5ea4096c4c84e34c0f9df2a67cbf6f03744ea6a4 172.16.233.132:8003@18003 master - 0 1606485269769 3 connected 10923-16383</span><br><span class="line">bb7eb9e25bbe0ae13704a2431c43dc1a3c21938c 172.16.233.131:8002@18002 master - 0 1606485270790 2 connected 5461-10922</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+<p>​                  </p>
+<ul>
+<li>关闭集群</li>
+</ul>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">方式1：慎用</span><br><span class="line">ps -ef|grep redis</span><br><span class="line">kill -9 pid</span><br></pre></td></tr></tbody></table></figure>
+
+
+
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"># 方式2:创建脚本</span><br><span class="line">redis-cli -c -h 127.0.0.1 -a kezhuoquan -p 7000 shutdown</span><br><span class="line">redis-cli -c -h 127.0.0.1 -a kezhuoquan -p 7001 shutdown</span><br><span class="line">redis-cli -c -h 127.0.0.1 -a kezhuoquan -p 7002 shutdown</span><br><span class="line">redis-cli -c -h 127.0.0.1 -a kezhuoquan -p 7003 shutdown</span><br><span class="line">redis-cli -c -h 127.0.0.1 -a kezhuoquan -p 7004 shutdown</span><br><span class="line">redis-cli -c -h 127.0.0.1 -a kezhuoquan -p 7005 shutdown</span><br></pre></td></tr></tbody></table></figure>
+
+]]></content>
+      <categories>
+        <category>Redis</category>
+      </categories>
+      <tags>
+        <tag>高可用集群</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>三个数之和</title>
+    <url>/2020/11/12/suan-fa/san-ge-shu-zhi-he/</url>
+    <content><![CDATA[<h1 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h1><p>给你一个包含 n 个整数的数组 nums，判断 nums 中是否存在三个元素 a，b，c ，使得 a + b + c = 0 ？请你找出所有满足条件且不重复的三元组。</p>
+<p>注意：答案中不可以包含重复的三元组。</p>
+<p>示例：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">给定数组 nums = [-1, 0, 1, 2, -1, -4]，</span><br><span class="line"></span><br><span class="line">满足要求的三元组集合为：</span><br><span class="line">[</span><br><span class="line">  [-1, 0, 1],</span><br><span class="line">  [-1, -1, 2]</span><br><span class="line">]</span><br></pre></td></tr></tbody></table></figure>
+
+
+
+<h1 id="解法一：暴力解法"><a href="#解法一：暴力解法" class="headerlink" title="解法一：暴力解法"></a>解法一：暴力解法</h1><ul>
+<li>先排序，后暴力遍历，时间复杂度为O(n^3)</li>
+</ul>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>{</span><br><span class="line">    <span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; threeSum(<span class="keyword">int</span>[] nums) {</span><br><span class="line">        List&lt;List&lt;Integer&gt;&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">int</span> len = nums.length;</span><br><span class="line">        <span class="keyword">if</span>(len &lt; <span class="number">3</span>) {</span><br><span class="line">            <span class="keyword">return</span> list;</span><br><span class="line">        }</span><br><span class="line">        <span class="comment">// 排序</span></span><br><span class="line">        Arrays.sort(nums);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i ++){</span><br><span class="line">            <span class="keyword">int</span> x = nums[i];</span><br><span class="line">            <span class="keyword">if</span>(x &gt; <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">            <span class="comment">// 去重</span></span><br><span class="line">            <span class="keyword">if</span> (i &gt; <span class="number">0</span> &amp;&amp; nums[i] == nums[i-<span class="number">1</span>]) <span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; len; j ++ ){</span><br><span class="line">                <span class="keyword">int</span> y = nums[j]; </span><br><span class="line">                <span class="keyword">if</span>(y+x&gt;<span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">                <span class="comment">// 去重</span></span><br><span class="line">                <span class="keyword">if</span> (j &gt; i + <span class="number">1</span> &amp;&amp; nums[j] == nums[j-<span class="number">1</span>]) <span class="keyword">continue</span>;</span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> k = j + <span class="number">1</span>; k &lt; len; k ++){</span><br><span class="line">                    <span class="keyword">int</span> z = nums[k];</span><br><span class="line">                    <span class="keyword">if</span>(z + x + y &gt; <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">                    <span class="comment">// 去重</span></span><br><span class="line">                    <span class="keyword">if</span> (k &gt; j + <span class="number">1</span> &amp;&amp; nums[k] == nums[k-<span class="number">1</span>]) <span class="keyword">continue</span>;</span><br><span class="line">                    </span><br><span class="line">                    <span class="keyword">if</span>(nums[i] + nums[j] == -nums[k]){</span><br><span class="line">                        List&lt;Integer&gt; temp = <span class="keyword">new</span> ArrayList(<span class="number">3</span>);</span><br><span class="line">                        temp.add(nums[i]);</span><br><span class="line">                        temp.add(nums[j]);</span><br><span class="line">                        temp.add(nums[k]);</span><br><span class="line">                        list.add(temp);</span><br><span class="line">                    }</span><br><span class="line">                }</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> list;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<ul>
+<li>注： 在leetcode上超时</li>
+</ul>
+<h1 id="解法二：-暴力解法-hashmap"><a href="#解法二：-暴力解法-hashmap" class="headerlink" title="解法二： 暴力解法+hashmap"></a>解法二： 暴力解法+hashmap</h1><figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>{</span><br><span class="line">    <span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; threeSum(<span class="keyword">int</span>[] nums) {</span><br><span class="line">        List&lt;List&lt;Integer&gt;&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">int</span> len = nums.length;</span><br><span class="line">        <span class="keyword">if</span>(len &lt; <span class="number">3</span>) {</span><br><span class="line">            <span class="keyword">return</span> list;</span><br><span class="line">        }</span><br><span class="line">        Arrays.sort(nums);</span><br><span class="line">        Map&lt;Integer,Integer&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        <span class="comment">// 将数组存放到map中</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) {</span><br><span class="line">            map.put(nums[i],i);</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i ++){</span><br><span class="line">            <span class="keyword">int</span> x = nums[i];</span><br><span class="line">            <span class="keyword">if</span> (x &gt; <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">if</span> (i &gt; <span class="number">0</span> &amp;&amp; nums[i] == nums[i-<span class="number">1</span>]) <span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; len; j ++ ){</span><br><span class="line">                <span class="keyword">int</span> y = nums[j];</span><br><span class="line">                <span class="comment">// x + y &gt; 0表示后面的和一定大于0</span></span><br><span class="line">                <span class="keyword">if</span> (x + y &gt; <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">                <span class="comment">// 去重</span></span><br><span class="line">                <span class="keyword">if</span> (j &gt; i + <span class="number">1</span> &amp;&amp; nums[j] == nums[j-<span class="number">1</span>]) <span class="keyword">continue</span>;</span><br><span class="line">                <span class="keyword">int</span> z = <span class="number">0</span> - x - y;</span><br><span class="line">                <span class="comment">// 判断z是否在map中且z的index &gt; j || i</span></span><br><span class="line">                <span class="keyword">if</span> (map.containsKey(z) &amp;&amp; map.get(z) &gt; j){</span><br><span class="line">                    List&lt;Integer&gt; temp = <span class="keyword">new</span> ArrayList&lt;&gt;(<span class="number">3</span>);</span><br><span class="line">                    temp.add(x);</span><br><span class="line">                    temp.add(y);</span><br><span class="line">                    temp.add(z);</span><br><span class="line">                    list.add(temp);</span><br><span class="line">                }</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> list;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+
+
+<h1 id="解法三：左右指针"><a href="#解法三：左右指针" class="headerlink" title="解法三：左右指针"></a>解法三：左右指针</h1><figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line">List&lt;List&lt;Integer&gt;&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line"> <span class="keyword">int</span> len = nums.length;</span><br><span class="line"> <span class="keyword">if</span> (len &lt; <span class="number">3</span>) {</span><br><span class="line">     <span class="keyword">return</span> list;</span><br><span class="line"> }</span><br><span class="line"> Arrays.sort(nums);</span><br><span class="line"> <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++) {</span><br><span class="line">     <span class="comment">// 当第一个数大于0时，说明该集合的和大于0；</span></span><br><span class="line">     <span class="keyword">if</span> (nums[i] &gt; <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">     <span class="comment">// 去重</span></span><br><span class="line">     <span class="keyword">if</span> (i &gt; <span class="number">0</span> &amp;&amp; nums[i] == nums[i - <span class="number">1</span>]) <span class="keyword">continue</span>;</span><br><span class="line">     <span class="keyword">int</span> l = i + <span class="number">1</span>;</span><br><span class="line">     <span class="keyword">int</span> r = nums.length - <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">     <span class="keyword">while</span> (l &lt; r){</span><br><span class="line">         <span class="keyword">int</span> num = nums[l] + nums[i] + nums[r];</span><br><span class="line">         <span class="comment">// 当三个数的和大于0时，l指针左移，且去重</span></span><br><span class="line">         <span class="keyword">if</span> (num &gt; <span class="number">0</span>){</span><br><span class="line">             <span class="keyword">while</span> (l &lt; r &amp;&amp; nums[r] == nums[--r]);</span><br><span class="line">         }</span><br><span class="line">         <span class="comment">// 当三个数的和小于0时，r指针右移，且去重</span></span><br><span class="line">         <span class="keyword">else</span> <span class="keyword">if</span> (num &lt; <span class="number">0</span>){</span><br><span class="line">             <span class="keyword">while</span> (l &lt; r &amp;&amp; nums[l] == nums[++l]);</span><br><span class="line">         }</span><br><span class="line">         <span class="comment">// 当三个数的等于0时，存放结果，左右去重</span></span><br><span class="line">         <span class="keyword">else</span> {</span><br><span class="line">             List&lt;Integer&gt; temp = <span class="keyword">new</span> ArrayList&lt;&gt;(<span class="number">3</span>);</span><br><span class="line">             temp.add(nums[l]);</span><br><span class="line">             temp.add(nums[i]);</span><br><span class="line">             temp.add(nums[r]);</span><br><span class="line">             list.add(temp);</span><br><span class="line">             <span class="comment">// 右去重</span></span><br><span class="line">             <span class="keyword">while</span> (l &lt; r &amp;&amp; nums[r] == nums[--r]);</span><br><span class="line">             <span class="comment">// 左去重</span></span><br><span class="line">             <span class="keyword">while</span> (l &lt; r &amp;&amp; nums[l] == nums[++l]);</span><br><span class="line">         }</span><br><span class="line">     }</span><br><span class="line"></span><br><span class="line"> }</span><br><span class="line"> <span class="keyword">return</span> list;</span><br></pre></td></tr></tbody></table></figure>
+
+]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>求和</tag>
+        <tag>排序</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>华擎B365m-itx黑苹果EFI</title>
+    <url>/2020/11/11/hei-ping-guo/hua-qing-b365m-itx-hei-ping-guo-efi/</url>
+    <content><![CDATA[<h1 id="电脑配置清单"><a href="#电脑配置清单" class="headerlink" title="电脑配置清单"></a>电脑配置清单</h1><ul>
+<li>主板： 华擎b365m-itx/ac</li>
+<li>CPU:    i5 9400</li>
+<li>内存： 枭鲸16G 2666MHz * 2</li>
+<li>硬盘：海康威视C2000 Pro 1024G + SN750 512G + 1024机械硬盘（备份系统）</li>
+<li>网卡： BCM94360CS2（免驱）</li>
+<li>显卡： 平时只打代码，不打游戏，就没买独显了</li>
+</ul>
+<h1 id="引导文件EFI"><a href="#引导文件EFI" class="headerlink" title="引导文件EFI"></a>引导文件EFI</h1><ul>
+<li><p>系统：Catalina 10.15.7</p>
+</li>
+<li><p>OpenCore 0.6.3</p>
+</li>
+</ul>
+<h1 id="使用情况"><a href="#使用情况" class="headerlink" title="使用情况"></a>使用情况</h1><ul>
+<li>达到99%的完美度</li>
+<li>节能五项都能使用</li>
+<li>单系统MacOS</li>
+</ul>
+<h1 id="EFI文件"><a href="#EFI文件" class="headerlink" title="EFI文件"></a>EFI文件</h1><ul>
+<li><p>2020-11-13 Big Sur.    <a href="https://github.com/KeXQ/-b365itx-i59400-efi/files/5534881/EFI-2020-11-13.zip">EFI</a></p>
+<ul>
+<li>更新到最新的系统</li>
+<li>修改了开启SIP的选项 </li>
+<li>修改了引导参数 boot-args：keepsyms=1 debug=0x100 cardtype=ecardonly,csr-active-config:67000000改为了00000000来开启SIP,csr-active-config的值解释如下和原来的Catalina不一样了</li>
+</ul>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">00000000 -完全启用SIP（0x0）。</span><br><span class="line">03000000 -禁用kext签名（0x1）和文件系统保护（0x2）。</span><br><span class="line">FF030000 -禁用macOS High Sierra（0x3ff）中的所有标志。</span><br><span class="line">FF070000 -当Apple引入了可执行策略的值时，禁用macOS Mojave和macOS Catalina（0x7ff）中的所有标志。</span><br><span class="line">FF0F0000 -禁用macOS Big Sur（0xfff）中的所有标志，该标志具有用于身份验证的root的另一个新标志。</span><br></pre></td></tr></tbody></table></figure>
+
+
+
+</li>
+</ul>
+<ul>
+<li><p>添加了4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102:rtc-blacklist</p>
+<p><img src="https://gitee.com/kexiquan/picture/raw/master/uPic/image-20201113124855389.png" alt="image-20201113124855389"></p>
+<p><img src="https://gitee.com/kexiquan/picture/raw/master/uPic/image-20201113125007837.png" alt="image-20201113125007837"></p>
+<p><img src="https://gitee.com/kexiquan/picture/raw/master/uPic/image-20201113133446806.png" alt="image-20201113133446806"></p>
+</li>
+</ul>
+<ul>
+<li>2020-11-01 Catalina 10.15.7 <a href="https://github.com/KeXQ/-b365itx-i59400-efi.git">EFI</a></li>
+</ul>
+<h1 id="谢鸣"><a href="#谢鸣" class="headerlink" title="谢鸣"></a>谢鸣</h1><ul>
+<li>黑果小兵提供的<a href="https://blog.daliansky.net/macOS-Catalina-10.15.7-19H2-Release-version-with-Clover-5122-original-image-Double-EFI-Version-UEFI-and-MBR.html">镜像</a>以及<a href="https://blog.daliansky.net/OpenCore-BootLoader.html">精解OpenCore</a>的帮助</li>
+<li>远景论坛大佬们的指导</li>
+</ul>
+<h1 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h1><p><img src="https://gitee.com/kexiquan/picture/raw/master/uPic/image-20201110224153663.png" alt="image-20201110224153663"></p>
+<p><img src="https://gitee.com/kexiquan/picture/raw/master/uPic/image-20201110224319790.png" alt="image-20201110224319790"></p>
+<ul>
+<li>硬解没问题</li>
+</ul>
+<p><img src="https://gitee.com/kexiquan/picture/raw/master/uPic/image-20201110230539942.png" alt="image-20201110230539942"></p>
+]]></content>
+      <categories>
+        <category>黑苹果</category>
+      </categories>
+      <tags>
+        <tag>OpenCore</tag>
       </tags>
   </entry>
 </search>
