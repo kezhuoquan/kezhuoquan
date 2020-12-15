@@ -1244,4 +1244,73 @@
         <tag>RabbitMQ</tag>
       </tags>
   </entry>
+  <entry>
+    <title>RocketMQ安装</title>
+    <url>/2020/12/15/rocketmq-an-zhuang/</url>
+    <content><![CDATA[<h1 id="下载软件包"><a href="#下载软件包" class="headerlink" title="下载软件包"></a>下载软件包</h1><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">wget https://www.apache.org/dyn/closer.cgi?path=rocketmq/4.7.1/rocketmq-all-4.7.1-bin-release.zip</span><br></pre></td></tr></tbody></table></figure>
+
+
+
+<h1 id="安装必要的软件包"><a href="#安装必要的软件包" class="headerlink" title="安装必要的软件包"></a>安装必要的软件包</h1><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">yum install java-1.8.0-openjdk</span><br><span class="line">yum install java-1.8.0-openjdk-devel.x86_64</span><br><span class="line"># 安装解压工具</span><br><span class="line">yum install unzip</span><br></pre></td></tr></tbody></table></figure>
+
+
+
+<h1 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h1><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">unzip rocketmq-all-4.7.1-bin-release.zip</span><br><span class="line">mv rocketmq-all-4.7.1-bin-release /usr/local</span><br><span class="line">mv /usr/local/rocket* /usr/local/rocketmq</span><br><span class="line">mkdir /usr/local/rocketmq/log</span><br></pre></td></tr></tbody></table></figure>
+
+<h1 id="设置环境变量"><a href="#设置环境变量" class="headerlink" title="设置环境变量"></a>设置环境变量</h1><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">vi /etc/profile</span><br><span class="line"># 在文件结尾添加以下内容</span><br><span class="line">echo -e "export ROCKETMQ_HOME=/usr/local/rocketmq\nexport PATH=\$ROCKETMQ_HOME/bin:\$PATH"</span><br></pre></td></tr></tbody></table></figure>
+
+<h1 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h1><h2 id="启动NameServer"><a href="#启动NameServer" class="headerlink" title="启动NameServer"></a>启动NameServer</h2><ul>
+<li>虚拟机不够4g内存，修改配置</li>
+</ul>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">vi /usr/local/rocketmq/bin/runserver.sh</span><br><span class="line"># 找到JAVA_OPT,修改</span><br><span class="line">JAVA_OPT="${JAVA_OPT} -server -Xms512m -Xmx512m -Xmn256m -XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=320m"</span><br></pre></td></tr></tbody></table></figure>
+
+<ul>
+<li>启动</li>
+</ul>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">nohup mqnamesrv  &gt;&gt; /usr/local/rocketmq/log/mqnamesrv.log&amp;</span><br></pre></td></tr></tbody></table></figure>
+
+<ul>
+<li>启动是否成功</li>
+</ul>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">cat /usr/local/rocketmq/log/mqnamesrv.log</span><br><span class="line"># 看到这一行说明启动成功</span><br><span class="line">The broker[rocketmq-base, 172.17.0.1:10911] boot success. serializeType=JSON</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="启动Broker"><a href="#启动Broker" class="headerlink" title="启动Broker"></a>启动Broker</h2><ul>
+<li>修改内存</li>
+</ul>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">vi /usr/local/rocketmq/bin/runbroker.sh</span><br><span class="line"># 将内存参数修改为以下内容</span><br><span class="line">JAVA_OPT="${JAVA_OPT} -server -Xms512m -Xmx512m -Xmn256m"</span><br></pre></td></tr></tbody></table></figure>
+
+<ul>
+<li>修改配置</li>
+</ul>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">vi /usr/local/rocketmq/conf/broker.conf</span><br><span class="line"># 在文件末尾添加</span><br><span class="line">autoCreateTopicEnable=true</span><br></pre></td></tr></tbody></table></figure>
+
+<ul>
+<li>启动</li>
+</ul>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">nohup mqbroker &gt;&gt; /usr/local/rocketmq/log/broker.log -n localhost:9876 &amp;</span><br></pre></td></tr></tbody></table></figure>
+
+<ul>
+<li>验证</li>
+</ul>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">cat nohup.out</span><br><span class="line"># 看到这一行说明启动成功</span><br><span class="line">The broker[rocketmq-base, 172.17.0.1:10911] boot success. serializeType=JSON</span><br></pre></td></tr></tbody></table></figure>
+
+<h1 id="验证安装是否成功"><a href="#验证安装是否成功" class="headerlink" title="验证安装是否成功"></a>验证安装是否成功</h1><h2 id="发送消息"><a href="#发送消息" class="headerlink" title="发送消息"></a>发送消息</h2><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">export NAMESRV_ADDR=localhost:9876</span><br><span class="line">sh /usr/local/rocketmq/bin/tools.sh org.apache.rocketmq.example.quickstart.Producer</span><br><span class="line"></span><br><span class="line">SendResult [sendStatus=SEND_OK, msgId=AC11000124496FF3C5B54CA124CA0000, offsetMsgId=AC11000100002A9F0000000000000000, messageQueue=MessageQueue [topic=TopicTest, brokerName=rocketmq-base, queueId=3], queueOffset=0]</span><br><span class="line">....</span><br><span class="line">0002A9F00000000000317BF, messageQueue=MessageQueue [topic=TopicTest, brokerName=rocketmq-base, queueId=2], queueOffset=249]</span><br><span class="line">21:07:12.275 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true</span><br><span class="line">21:07:12.284 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[172.17.0.1:10911] result: true</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="接收消息"><a href="#接收消息" class="headerlink" title="接收消息"></a>接收消息</h2><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"># 1.设置环境变量</span><br><span class="line">export NAMESRV_ADDR=localhost:9876</span><br><span class="line"># 2.接收消息</span><br><span class="line">tools.sh org.apache.rocketmq.example.quickstart.Consumer</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">21:12:37.000 [main] DEBUG i.n.u.i.l.InternalLoggerFactory - Using SLF4J as the default logging framework</span><br><span class="line">Consumer Started.</span><br><span class="line">ConsumeMessageThread_1 Receive New Messages: [MessageExt [brokerName=rocketmq-base, queueId=2, storeSize=201, queueOffset=0, sysFlag=0, bornTimestamp=1608037629196, bornHost=/172.17.0.1:53990, storeTimestamp=1608037629198, storeHost=/172.17.0.1:10911, msgId=AC11000100002A9F000000000000025B, commitLogOffset=603, bodyCRC=1032136437, reconsumeTimes=0, preparedTransactionOffset=0, toString()=Message{topic='TopicTest', flag=0, properties={MIN_OFFSET=0, MAX_OFFSET=250, CONSUME_START_TIME=1608037957519, UNIQ_KEY=AC11000124496FF3C5B54CA1250C0003, CLUSTER=DefaultCluster, WAIT=true, TAGS=TagA}, body=[72, 101, 108, 108, 111, 32, 82, 111, 99, 107, 101, 116, 77, 81, 32, 51], transactionId='null'}]] </span><br><span class="line">.....</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+
+
+<h1 id="关闭"><a href="#关闭" class="headerlink" title="关闭"></a>关闭</h1><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"># 1.关闭NameServer</span><br><span class="line">sh bin/mqshutdown namesrv</span><br><span class="line"># 2.关闭Broker</span><br><span class="line">sh bin/mqshutdown broker</span><br></pre></td></tr></tbody></table></figure>
+
+<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">java.lang.IllegalStateException: org.apache.rocketmq.remoting.exception.RemotingConnectException: connect to null failed</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 关闭防火墙，生产环境慎用，直接开发端口就行了</span><br><span class="line">systemctl stop firewalld</span><br></pre></td></tr></tbody></table></figure>
+
+]]></content>
+      <categories>
+        <category>中间件</category>
+        <category>消息队列</category>
+      </categories>
+      <tags>
+        <tag>RocketMQ</tag>
+      </tags>
+  </entry>
 </search>
