@@ -1257,7 +1257,7 @@
 
 <h1 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h1><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">unzip rocketmq-all-4.7.1-bin-release.zip</span><br><span class="line">mv rocketmq-all-4.7.1-bin-release /usr/local</span><br><span class="line">mv /usr/local/rocket* /usr/local/rocketmq</span><br><span class="line">mkdir /usr/local/rocketmq/log</span><br></pre></td></tr></tbody></table></figure>
 
-<h1 id="设置环境变量"><a href="#设置环境变量" class="headerlink" title="设置环境变量"></a>设置环境变量</h1><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">vi /etc/profile</span><br><span class="line"># 在文件结尾添加以下内容</span><br><span class="line">echo -e "export ROCKETMQ_HOME=/usr/local/rocketmq\nexport PATH=\$ROCKETMQ_HOME/bin:\$PATH"</span><br></pre></td></tr></tbody></table></figure>
+<h1 id="设置环境变量"><a href="#设置环境变量" class="headerlink" title="设置环境变量"></a>设置环境变量</h1><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">echo -e "export ROCKETMQ_HOME=/usr/local/rocketmq\nexport PATH=\$ROCKETMQ_HOME/bin:\$PATH"</span><br></pre></td></tr></tbody></table></figure>
 
 <h1 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h1><h2 id="启动NameServer"><a href="#启动NameServer" class="headerlink" title="启动NameServer"></a>启动NameServer</h2><ul>
 <li>虚拟机不够4g内存，修改配置</li>
@@ -1287,7 +1287,7 @@
 <ul>
 <li>启动</li>
 </ul>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">nohup mqbroker &gt;&gt; /usr/local/rocketmq/log/broker.log -n localhost:9876 &amp;</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">nohup mqbroker &gt;&gt; /usr/local/rocketmq/log/broker.log -c /usr/local/rocketmq/conf/broker.conf &amp;</span><br></pre></td></tr></tbody></table></figure>
 
 <ul>
 <li>验证</li>
@@ -1311,6 +1311,121 @@
       </categories>
       <tags>
         <tag>RocketMQ</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>mermaid画时序图</title>
+    <url>/2021/01/13/mermaid-hua-shi-xu-tu/</url>
+    <content><![CDATA[<h1 id="参与者（Participants）"><a href="#参与者（Participants）" class="headerlink" title="参与者（Participants）"></a>参与者（Participants）</h1><p>传统时序图概念中参与者有角色和类对象之分，但这里我们不做此区分，用参与者表示一切参与交互的事物，可以是人、类对象、系统等形式。中间竖直的线段从上至下表示时间的流逝。</p>
+<h2 id="隐式定义"><a href="#隐式定义" class="headerlink" title="隐式定义"></a>隐式定义</h2><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">​```mermaid</span><br><span class="line">sequenceDiagram</span><br><span class="line">老板-&gt;&gt;员工:开始实行996制度</span><br><span class="line">员工--&gt;&gt;老板: 坚决拒接</span><br><span class="line">​```</span><br></pre></td></tr></tbody></table></figure>
+
+
+
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">sequenceDiagram</span><br><span class="line">老板-&gt;&gt;员工:开始实行996制度</span><br><span class="line">员工--&gt;&gt;老板: 坚决拒接</span><br></pre></td></tr></tbody></table></figure>
+
+
+
+<h2 id="显式定义"><a href="#显式定义" class="headerlink" title="显式定义"></a>显式定义</h2><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">​``` mermaid</span><br><span class="line">sequenceDiagram</span><br><span class="line">participant 老板</span><br><span class="line">participant 员工</span><br><span class="line">​```</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">sequenceDiagram</span><br><span class="line">participant 老板</span><br><span class="line">participant 员工</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="别名（Aliases）"><a href="#别名（Aliases）" class="headerlink" title="别名（Aliases）"></a>别名（Aliases）</h2><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">​``` mermaid</span><br><span class="line">sequenceDiagram</span><br><span class="line">participant L as 老板</span><br><span class="line">participant Y as 员工</span><br><span class="line">L-&gt;&gt;Y:开始实行996制度</span><br><span class="line">Y--&gt;&gt;L:坚决拒绝</span><br><span class="line">​```</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">sequenceDiagram</span><br><span class="line">participant L as 老板</span><br><span class="line">participant Y as 员工</span><br><span class="line">L-&gt;&gt;Y:开始实行996制度</span><br><span class="line">Y--&gt;&gt;L:坚决拒绝</span><br></pre></td></tr></tbody></table></figure>
+
+<h1 id="消息（Messages）"><a href="#消息（Messages）" class="headerlink" title="消息（Messages）"></a>消息（Messages）</h1><p>交互时一方对另一方的操作（比如接口调用）或传递出的信息。用单向箭头来表示——实线代表主动发出消息；虚线代表响应；末尾带「X」代表异步消息，无需等待回应。</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-&gt;</td>
+<td>无箭头实线</td>
+</tr>
+<tr>
+<td>–&gt;</td>
+<td>无箭头虚线</td>
+</tr>
+<tr>
+<td>-&gt;&gt;</td>
+<td>有箭头实线</td>
+</tr>
+<tr>
+<td>–&gt;&gt;</td>
+<td>有箭头虚线</td>
+</tr>
+<tr>
+<td>-x</td>
+<td>末尾带十字的实线（异步）异步消息</td>
+</tr>
+<tr>
+<td>–x</td>
+<td>末尾带十字的虚线（异步）异步消息</td>
+</tr>
+</tbody></table>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">sequenceDiagram</span><br><span class="line">A-&gt;B:无箭头实线</span><br><span class="line">A--&gt;B:无箭头虚线</span><br><span class="line">A-&gt;&gt;B:有箭头实线</span><br><span class="line">A--&gt;&gt;B:有箭头虚线</span><br><span class="line">A-xB:末尾带十字的实线（异步）</span><br><span class="line">A--xB:末尾带十字的虚线（异步）</span><br></pre></td></tr></tbody></table></figure>
+
+<h1 id="激活（Activations）"><a href="#激活（Activations）" class="headerlink" title="激活（Activations）"></a>激活（Activations）</h1><p>从消息接收方的时间线上标记一小段时间，表示对消息进行处理的时间间隔。</p>
+<h2 id="使用-来表示激活"><a href="#使用-来表示激活" class="headerlink" title="使用+-来表示激活"></a>使用+-来表示激活</h2><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">​``` mermaid</span><br><span class="line">sequenceDiagram</span><br><span class="line">老板-&gt;&gt;+员工: 公司要开始实行996制度了</span><br><span class="line">员工--&gt;&gt;-老板: 鼓掌</span><br><span class="line">老板-&gt;&gt;+员工: 对钱没兴趣</span><br><span class="line">员工--&gt;&gt;-老板: 鼓掌</span><br><span class="line">​```</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">sequenceDiagram</span><br><span class="line">老板-&gt;&gt;+员工: 公司要开始实行996制度了</span><br><span class="line">员工--&gt;&gt;-老板: 鼓掌</span><br><span class="line">老板-&gt;&gt;+员工: 对钱没兴趣</span><br><span class="line">员工--&gt;&gt;-老板: 鼓掌</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="使用activate来表示激活（typora不支持）"><a href="#使用activate来表示激活（typora不支持）" class="headerlink" title="使用activate来表示激活（typora不支持）"></a>使用activate来表示激活（typora不支持）</h2><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">​``` mermaid</span><br><span class="line">sequenceDiagram</span><br><span class="line">A-&gt;&gt;B: hello B</span><br><span class="line">activate B</span><br><span class="line">B--&gt;&gt;A: hello A</span><br><span class="line">​```</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">sequenceDiagram</span><br><span class="line">A-&gt;&gt;B: hello B</span><br><span class="line">activate B</span><br><span class="line">B--&gt;&gt;A: hello A</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="激活的嵌套"><a href="#激活的嵌套" class="headerlink" title="激活的嵌套"></a>激活的嵌套</h2><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">​``` mermaid</span><br><span class="line">sequenceDiagram</span><br><span class="line">A-&gt;&gt;+B:hello B</span><br><span class="line">A-&gt;&gt;+B:hello B1</span><br><span class="line">B--&gt;&gt;-A:hello A1</span><br><span class="line">B--&gt;&gt;-A: hello A</span><br><span class="line">​```</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">sequenceDiagram</span><br><span class="line">A-&gt;&gt;+B:hello B</span><br><span class="line">A-&gt;&gt;+B:hello B1</span><br><span class="line">B--&gt;&gt;-A:hello A1</span><br><span class="line">B--&gt;&gt;-A: hello A</span><br></pre></td></tr></tbody></table></figure>
+
+<h1 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h1><p>note left of/right of /over actor</p>
+<h2 id="left-of"><a href="#left-of" class="headerlink" title="left of"></a>left of</h2><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">​``` mermaid</span><br><span class="line">sequenceDiagram</span><br><span class="line">participant 老板A</span><br><span class="line">note left of 老板A: 对钱没兴趣</span><br><span class="line">​```</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">sequenceDiagram</span><br><span class="line">participant 老板A</span><br><span class="line">note left of 老板A: 对钱没兴趣</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="right-of"><a href="#right-of" class="headerlink" title="right of"></a>right of</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">​``` mermaid</span><br><span class="line">sequenceDiagram</span><br><span class="line">participant 老板B</span><br><span class="line">note right of 老板B: 普通家庭</span><br><span class="line">​```</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">sequenceDiagram</span><br><span class="line">participant 老板B</span><br><span class="line">note right of 老板B: 普通家庭</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="over"><a href="#over" class="headerlink" title="over"></a>over</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">​``` mermaid</span><br><span class="line">sequenceDiagram</span><br><span class="line">participant 老板C</span><br><span class="line">note over 老板C: 对996感兴趣</span><br><span class="line">​```</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">sequenceDiagram</span><br><span class="line">participant 老板C</span><br><span class="line">note over 老板C: 对996感兴趣</span><br></pre></td></tr></tbody></table></figure>
+
+<h1 id="循环（Loops）"><a href="#循环（Loops）" class="headerlink" title="循环（Loops）"></a>循环（Loops）</h1><p>在时序图中使用loop来表示循环</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">​``` mermaid</span><br><span class="line">sequenceDiagram</span><br><span class="line">loop 每天上午9:00</span><br><span class="line">舔狗-&gt;&gt;女神: 早安</span><br><span class="line">end</span><br><span class="line">​```</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">sequenceDiagram</span><br><span class="line">loop 每天上午9:00</span><br><span class="line">舔狗-&gt;&gt;女神: 早安</span><br><span class="line">end</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+<h1 id="抉择（Alt）"><a href="#抉择（Alt）" class="headerlink" title="抉择（Alt）"></a>抉择（Alt）</h1><p>在多个条件中作出判断，每个条件将对应不同的消息序列。相当于 if 及 else if 语句。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">​``` mermaid</span><br><span class="line">sequenceDiagram</span><br><span class="line">alt 早上9:00</span><br><span class="line">舔狗-&gt;&gt;女神: 早安</span><br><span class="line">else 晚上12:00</span><br><span class="line">舔狗-&gt;&gt;女神: 晚安</span><br><span class="line">end</span><br><span class="line">​```</span><br></pre></td></tr></tbody></table></figure>
+
+
+
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">sequenceDiagram</span><br><span class="line">alt 早上9:00</span><br><span class="line">舔狗-&gt;&gt;女神: 早安</span><br><span class="line">else 晚上12:00</span><br><span class="line">舔狗-&gt;&gt;女神: 晚安</span><br><span class="line">end</span><br></pre></td></tr></tbody></table></figure>
+
+
+
+<h1 id="选项（Opt）"><a href="#选项（Opt）" class="headerlink" title="选项（Opt）"></a>选项（Opt）</h1><p>在某条件满足时执行消息序列，否则不执行。相当于单个分支的 if 语句。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">​``` mermaid</span><br><span class="line">sequenceDiagram</span><br><span class="line">老板-&gt;&gt;员工: 开始实行996</span><br><span class="line">opt 用不可能</span><br><span class="line">老板-&gt;&gt;员工: 拒绝</span><br><span class="line">end</span><br><span class="line">​```</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">sequenceDiagram</span><br><span class="line">老板-&gt;&gt;员工: 开始实行996</span><br><span class="line">opt 用不可能</span><br><span class="line">老板-&gt;&gt;员工: 拒绝</span><br><span class="line">end</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+<h1 id="并行（Opt）"><a href="#并行（Opt）" class="headerlink" title="并行（Opt）"></a>并行（Opt）</h1><p>将消息序列分成多个片段，这些片段并行执行。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">​```mermaid</span><br><span class="line">sequenceDiagram</span><br><span class="line">老板-&gt;&gt;员工:开始实行996</span><br><span class="line">par 并行</span><br><span class="line">员工-&gt;&gt;员工:刷哔哩哔哩</span><br><span class="line">and</span><br><span class="line">员工-&gt;&gt;员工: 工作</span><br><span class="line">and</span><br><span class="line">员工-&gt;&gt;员工: 刷朋友圈</span><br><span class="line">end</span><br><span class="line">员工--&gt;&gt;老板: 9点下班</span><br><span class="line">​```</span><br></pre></td></tr></tbody></table></figure>
+
+
+
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">sequenceDiagram</span><br><span class="line">老板-&gt;&gt;员工:开始实行996</span><br><span class="line">par 并行</span><br><span class="line">员工-&gt;&gt;员工:刷哔哩哔哩</span><br><span class="line">and</span><br><span class="line">员工-&gt;&gt;员工: 工作</span><br><span class="line">and</span><br><span class="line">员工-&gt;&gt;员工: 刷朋友圈</span><br><span class="line">end</span><br><span class="line">员工--&gt;&gt;老板: 9点下班</span><br></pre></td></tr></tbody></table></figure>
+
+]]></content>
+      <categories>
+        <category>mermaid</category>
+      </categories>
+      <tags>
+        <tag>时序图</tag>
       </tags>
   </entry>
 </search>
